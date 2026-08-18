@@ -58,6 +58,13 @@ async function startServer() {
       emailAndPassword: {
         enabled: true,
       },
+      baseURL: process.env.RENDER_EXTERNAL_URL || "http://localhost:5000",
+      advanced: {
+        defaultCookieAttributes: {
+          sameSite: "none",
+          secure: true
+        }
+      },
       // Wir erlauben alle origins als vertrauenswürdig für die Cookies im Dev-Modus
       trustedOrigins: ["http://localhost:5173", process.env.FRONTEND_URL].filter(Boolean)
     });
