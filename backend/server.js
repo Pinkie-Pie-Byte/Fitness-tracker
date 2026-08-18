@@ -58,7 +58,7 @@ async function startServer() {
       emailAndPassword: {
         enabled: true,
       },
-      baseURL: process.env.RENDER_EXTERNAL_URL || "http://localhost:5000",
+      baseURL: process.env.FRONTEND_URL || "http://localhost:5000",
       advanced: {
         defaultCookieAttributes: {
           sameSite: "none",
