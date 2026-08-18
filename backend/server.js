@@ -62,8 +62,8 @@ async function startServer() {
       trustedOrigins: ["http://localhost:5173", process.env.FRONTEND_URL].filter(Boolean)
     });
 
-    // Auth Middleware: fängt alle /api/auth/* Anfragen ab
-    app.all('/api/auth/*', toNodeHandler(auth));
+    // Auth Middleware: fängt alle /api/auth Anfragen ab (angepasst für Express 5)
+    app.use('/api/auth', toNodeHandler(auth));
 
     // Eigene Middleware zur Session-Prüfung für die restlichen API-Routen
     const requireAuth = async (req, res, next) => {
