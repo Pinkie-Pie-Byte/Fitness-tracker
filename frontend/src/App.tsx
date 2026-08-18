@@ -8,10 +8,14 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Line, LineChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import Auth from '@/components/Auth';
+import { authClient } from '@/lib/auth';
 
 const API_URL = import.meta.env.VITE_API_URL || '';
 
 export default function App() {
+  const { data: session, isPending } = authClient.useSession();
+
   const [workouts, setWorkouts] = useState<any[]>([]);
   const [logs, setLogs] = useState<any[]>([]);
   const [availableExercises, setAvailableExercises] = useState<any[]>([]);
@@ -33,27 +37,35 @@ export default function App() {
   const [chartFilter, setChartFilter] = useState('all');
 
   useEffect(() => {
-    fetchWorkouts();
-    fetchExercises();
-    fetchLogs();
-  }, []);
+    if (session) {
+      fetchWorkouts();
+      fetchExercises();
+      fetchLogs();
+    }
+  }, [session]);
 
   const fetchWorkouts = async () => {
-    const res = await fetch(`${API_URL}/api/workouts`);
-    const data = await res.json();
-    setWorkouts(data);
+    const res = await fetch(`${API_URL}/api/workouts`, { credentials: 'include' });
+    if(res.ok) {
+      const data = await res.json();
+      setWorkouts(data);
+    }
   };
 
   const fetchExercises = async () => {
-    const res = await fetch(`${API_URL}/api/exercises`);
-    const data = await res.json();
-    setAvailableExercises(data);
+    const res = await fetch(`${API_URL}/api/exercises`, { credentials: 'include' });
+    if(res.ok) {
+      const data = await res.json();
+      setAvailableExercises(data);
+    }
   };
 
   const fetchLogs = async () => {
-    const res = await fetch(`${API_URL}/api/logs`);
-    const data = await res.json();
-    setLogs(data);
+    const res = await fetch(`${API_URL}/api/logs`, { credentials: 'include' });
+    if(res.ok) {
+      const data = await res.json();
+      setLogs(data);
+    }
   };
 
   const handleAddExercise = () => {
@@ -76,7 +88,8 @@ export default function App() {
     await fetch(`${API_URL}/api/workouts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newWorkout)
+      body: JSON.stringify(newWorkout),
+      credentials: 'include'
     });
     setTitle(''); setNotes(''); setPendingExercises([]);
     fetchWorkouts();
@@ -84,7 +97,7 @@ export default function App() {
 
   const handleDeleteWorkout = async (id: string) => {
     if (!confirm('Wirklich löschen?')) return;
-    await fetch(`${API_URL}/api/workouts/${id}`, { method: 'DELETE' });
+    await fetch(`${API_URL}/api/workouts/${id}`, { method: 'DELETE', credentials: 'include' });
     fetchWorkouts();
     fetchLogs();
   };
@@ -110,7 +123,8 @@ export default function App() {
     await fetch(`${API_URL}/api/logs`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(logData)
+      body: JSON.stringify(logData),
+      credentials: 'include'
     });
     setExecutionWorkout(null);
     fetchLogs();
@@ -146,10 +160,22 @@ export default function App() {
     return data;
   }, [logs, chartFilter]);
 
+  if (isPending) {
+    return <div className="p-8 text-center mt-20">Laden...</div>;
+  }
+
+  if (!session) {
+    return <Auth onLogin={() => window.location.reload()} />;
+  }
+
   return (
     <div className="container mx-auto p-4 md:p-8 space-y-8">
       <header className="flex justify-between items-center pb-4 border-b">
         <h1 className="text-3xl font-bold tracking-tight">Iron<span className="text-green-500">Track</span></h1>
+        <Button variant="outline" onClick={async () => {
+          await authClient.signOut();
+          window.location.reload();
+        }}>Abmelden</Button>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
