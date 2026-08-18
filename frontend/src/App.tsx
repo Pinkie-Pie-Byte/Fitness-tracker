@@ -172,11 +172,11 @@ export default function App() {
     <div className="container mx-auto p-4 md:p-8 space-y-8">
       <header className="flex justify-between items-center pb-4 border-b">
         <div className="flex items-center gap-3">
-          <div className="bg-green-500 p-2 rounded-lg text-black">
+          <div className="bg-primary p-2 rounded-lg text-primary-foreground">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v16"/><path d="M18 4v16"/><path d="M4 8h16"/><path d="M4 16h16"/><path d="M2 12h20"/></svg>
           </div>
           <h1 className="text-3xl font-sans font-black tracking-tighter uppercase italic">
-            Iron<span className="text-green-500">Track</span>
+            Iron<span className="text-primary">Track</span>
           </h1>
         </div>
         <Button variant="outline" onClick={async () => {
@@ -255,7 +255,7 @@ export default function App() {
                   <Card key={w._id}>
                     <CardHeader className="flex flex-row items-center justify-between">
                       <div>
-                        <CardTitle className="text-green-500">{w.title}</CardTitle>
+                        <CardTitle className="text-primary">{w.title}</CardTitle>
                         <CardDescription>{new Date(w.createdAt).toLocaleDateString()}</CardDescription>
                       </div>
                       <div className="space-x-2">
