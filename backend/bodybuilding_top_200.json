@@ -1,0 +1,2369 @@
+[
+  {
+    "id": "0001",
+    "name": "Flachbankdrücken",
+    "bodyPart": "Brust",
+    "equipment": "Langhantel",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Flachbankdrücken mit der Langhantel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0001.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.2,
+    "caloriesPerMinute": 5.0,
+    "description": "Die Übung 'Flachbankdrücken mit der Langhantel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 1,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "masseaufbau",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0002",
+    "name": "Schrägbankdrücken",
+    "bodyPart": "Brust",
+    "equipment": "Langhantel",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Schrägbankdrücken mit der Langhantel (Positiv)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0002.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.3,
+    "caloriesPerMinute": 5.2,
+    "description": "Die Übung 'Schrägbankdrücken mit der Langhantel (Positiv) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 2,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-obere-brust",
+      "freie-gewichte",
+      "fokus",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0003",
+    "name": "Negativbankdrücken",
+    "bodyPart": "Brust",
+    "equipment": "Langhantel",
+    "target": "Untere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Negativbankdrücken mit der Langhantel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Untere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0003.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.5,
+    "caloriesPerMinute": 5.4,
+    "description": "Die Übung 'Negativbankdrücken mit der Langhantel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Untere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 3,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-untere-brust",
+      "freie-gewichte",
+      "fokus",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0004",
+    "name": "Kurzhantel-Flachbankdrücken",
+    "bodyPart": "Brust",
+    "equipment": "Kurzhantel",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kurzhantel-Flachbankdrücken mit mentalem Fokus' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0004.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.6,
+    "caloriesPerMinute": 5.5,
+    "description": "Die Übung 'Kurzhantel-Flachbankdrücken mit mentalem Fokus - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 4,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "bodybuilding",
+      "einseitige-stabilität",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0005",
+    "name": "Kurzhantel-Schrägbankdrücken (Positiv)",
+    "bodyPart": "Brust",
+    "equipment": "Kurzhantel",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kurzhantel-Schrägbankdrücken (Positiv)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0005.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.8,
+    "caloriesPerMinute": 5.8,
+    "description": "Die Übung 'Kurzhantel-Schrägbankdrücken (Positiv) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 5,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-obere-brust",
+      "freie-gewichte",
+      "fokus",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0006",
+    "name": "Kurzhantel-Negativbankdrücken",
+    "bodyPart": "Brust",
+    "equipment": "Kurzhantel",
+    "target": "Untere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kurzhantel-Negativbankdrücken' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Untere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0006.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.9,
+    "caloriesPerMinute": 5.9,
+    "description": "Die Übung 'Kurzhantel-Negativbankdrücken - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Untere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 6,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-untere-brust",
+      "freie-gewichte",
+      "fokus",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0007",
+    "name": "Fliegende Bewegung auf der Flachbank (Kurzhanteln)",
+    "bodyPart": "Brust",
+    "equipment": "Kurzhantel",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Fliegende Bewegung auf der Flachbank (Kurzhanteln)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0007.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.0,
+    "caloriesPerMinute": 6.0,
+    "description": "Die Übung 'Fliegende Bewegung auf der Flachbank (Kurzhanteln) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 7,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "dehnung",
+      "fokus",
+      "konzentriert",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0008",
+    "name": "Fliegende Bewegung auf der Schrägbank (Kurzhanteln)",
+    "bodyPart": "Brust",
+    "equipment": "Kurzhantel",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Fliegende Bewegung auf der Schrägbank (Kurzhanteln)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0008.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.2,
+    "caloriesPerMinute": 6.2,
+    "description": "Die Übung 'Fliegende Bewegung auf der Schrägbank (Kurzhanteln) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 8,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-obere-brust",
+      "dehnung",
+      "fokus",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0009",
+    "name": "Kabelzug-Fly von oben nach unten (High-to-Low)",
+    "bodyPart": "Brust",
+    "equipment": "Kabelzug",
+    "target": "Untere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kabelzug-Fly von oben nach unten (High-to-Low)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Untere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0009.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.3,
+    "caloriesPerMinute": 6.4,
+    "description": "Die Übung 'Kabelzug-Fly von oben nach unten (High-to-Low) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Untere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 9,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "pump",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0010",
+    "name": "Kabelzug-Fly von unten nach oben (Low-to-High)",
+    "bodyPart": "Brust",
+    "equipment": "Kabelzug",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kabelzug-Fly von unten nach oben (Low-to-High)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0010.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.5,
+    "caloriesPerMinute": 6.6,
+    "description": "Die Übung 'Kabelzug-Fly von unten nach oben (Low-to-High) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 10,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-obere-brust",
+      "fokus",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0011",
+    "name": "Kabelzug-Fly stehend auf Brusthöhe",
+    "bodyPart": "Brust",
+    "equipment": "Kabelzug",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kabelzug-Fly stehend auf Brusthöhe' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0011.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.7,
+    "caloriesPerMinute": 6.8,
+    "description": "Die Übung 'Kabelzug-Fly stehend auf Brusthöhe - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 11,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "mind-muscle",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0012",
+    "name": "Brustpresse an der Maschine (Sitzend)",
+    "bodyPart": "Brust",
+    "equipment": "Maschine",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Brustpresse an der Maschine (Sitzend)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0012.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 5.8,
+    "caloriesPerMinute": 7.0,
+    "description": "Die Übung 'Brustpresse an der Maschine (Sitzend) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 12,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "sicher",
+      "schweres-training",
+      "bodybuilding",
+      "maschinengestützt",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0013",
+    "name": "Schräge Brustpresse an der Hammer-Strength-Maschine",
+    "bodyPart": "Brust",
+    "equipment": "Maschine",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Schräge Brustpresse an der Hammer-Strength-Maschine' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0013.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.0,
+    "caloriesPerMinute": 7.2,
+    "description": "Die Übung 'Schräge Brustpresse an der Hammer-Strength-Maschine - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 13,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus-obere-brust",
+      "fokus",
+      "bodybuilding",
+      "maschinengestützt",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0014",
+    "name": "Pek-Deck / Butterfly-Maschine für innere Brust",
+    "bodyPart": "Brust",
+    "equipment": "Maschine",
+    "target": "Brustmuskulatur (Pectoralis major)",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Pek-Deck / Butterfly-Maschine für innere Brust' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brustmuskulatur (Pectoralis major) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0014.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 6.1,
+    "caloriesPerMinute": 7.3,
+    "description": "Die Übung 'Pek-Deck / Butterfly-Maschine für innere Brust - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Brustmuskulatur (Pectoralis major) im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 14,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "kontraktion",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0015",
+    "name": "Liegestütze",
+    "bodyPart": "Brust",
+    "equipment": "Eigengewicht",
+    "target": "Obere Brustmuskulatur",
+    "secondaryMuscles": [
+      "Trizeps",
+      "Vordere Schulter",
+      "Rumpfmuskulatur"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Liegestütze mit erhöhten Füßen (Fokus obere Brust)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Obere Brustmuskulatur zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0015.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.2,
+    "caloriesPerMinute": 7.4,
+    "description": "Die Übung 'Liegestütze mit erhöhten Füßen (Fokus obere Brust) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Obere Brustmuskulatur im Bereich Brust unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 15,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "eigengewicht",
+      "anfängerfreundlich",
+      "fokus",
+      "unterkörper-kraft",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0017",
+    "name": "Klassisches Kreuzheben vom Boden (Deadlift)",
+    "bodyPart": "Rücken",
+    "equipment": "Langhantel",
+    "target": "Erector Spinae (Rückenstrecker)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Klassisches Kreuzheben vom Boden (Deadlift)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Erector Spinae (Rückenstrecker) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0017.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 6.5,
+    "caloriesPerMinute": 7.8,
+    "description": "Die Übung 'Klassisches Kreuzheben vom Boden (Deadlift) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Erector Spinae (Rückenstrecker) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 17,
+    "recommendedSets": "4",
+    "recommendedReps": "6-10",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "ganzkörper",
+      "kraft",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0018",
+    "name": "Rumänisches Kreuzheben",
+    "bodyPart": "Rücken",
+    "equipment": "Langhantel",
+    "target": "Unterer Rücken & Hamstrings",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Rumänisches Kreuzheben mit der Langhantel (RDL)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Unterer Rücken & Hamstrings zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0018.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 6.7,
+    "caloriesPerMinute": 8.0,
+    "description": "Die Übung 'Rumänisches Kreuzheben mit der Langhantel (RDL) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Unterer Rücken & Hamstrings im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 18,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "hintere-kette",
+      "dehnung",
+      "fokus",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0019",
+    "name": "Langhantel-Rudern vorgebeugt",
+    "bodyPart": "Rücken",
+    "equipment": "Langhantel",
+    "target": "Latissimus (Lats)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Langhantel-Rudern vorgebeugt im 45-Grad-Winkel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Lats) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0019.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 6.8,
+    "caloriesPerMinute": 8.2,
+    "description": "Die Übung 'Langhantel-Rudern vorgebeugt im 45-Grad-Winkel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Lats) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 19,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "rückendichte",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0020",
+    "name": "Langhantel-Rudern",
+    "bodyPart": "Rücken",
+    "equipment": "Langhantel",
+    "target": "Oberer Rücken & Rhomboideen",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Langhantel-Rudern im Obergriff (Pendlay Row)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Oberer Rücken & Rhomboideen zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0020.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.0,
+    "caloriesPerMinute": 8.4,
+    "description": "Die Übung 'Langhantel-Rudern im Obergriff (Pendlay Row) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Oberer Rücken & Rhomboideen im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 20,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "explosiv",
+      "fokus",
+      "rückendichte",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0021",
+    "name": "Kurzhantel-Rudern einarmig auf der Flachbank",
+    "bodyPart": "Rücken",
+    "equipment": "Kurzhantel",
+    "target": "Latissimus (Lats)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kurzhantel-Rudern einarmig auf der Flachbank' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Lats) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0021.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.2,
+    "caloriesPerMinute": 8.6,
+    "description": "Die Übung 'Kurzhantel-Rudern einarmig auf der Flachbank - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Lats) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": true,
+    "popularityRank": 21,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "großer-bewegungsumfang",
+      "freie-gewichte",
+      "fokus",
+      "einseitig",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0022",
+    "name": "Kurzhantel-Rudern vorgebeugt (Beidarmig)",
+    "bodyPart": "Rücken",
+    "equipment": "Kurzhantel",
+    "target": "Latissimus & Rautenmuskel",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Kurzhantel-Rudern vorgebeugt (Beidarmig)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus & Rautenmuskel zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0022.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.3,
+    "caloriesPerMinute": 8.8,
+    "description": "Die Übung 'Kurzhantel-Rudern vorgebeugt (Beidarmig) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus & Rautenmuskel im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 22,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "bodybuilding",
+      "koordination",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0023",
+    "name": "T-Bar-Rudern",
+    "bodyPart": "Rücken",
+    "equipment": "Maschine",
+    "target": "Rhomboideen & Trapezmuskel",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'T-Bar-Rudern mit brustgestütztem Polster' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Rhomboideen & Trapezmuskel zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0023.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.4,
+    "caloriesPerMinute": 8.9,
+    "description": "Die Übung 'T-Bar-Rudern mit brustgestütztem Polster - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Rhomboideen & Trapezmuskel im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 23,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "rückendichte",
+      "kontrolliert",
+      "bodybuilding",
+      "maschinengestützt",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0024",
+    "name": "Klimmzüge",
+    "bodyPart": "Rücken",
+    "equipment": "Eigengewicht",
+    "target": "Latissimus (Lats)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Klimmzüge im weiten Obergriff' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Lats) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0024.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.6,
+    "caloriesPerMinute": 9.1,
+    "description": "Die Übung 'Klimmzüge im weiten Obergriff - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Lats) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 24,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "oberkörper-kraft",
+      "hypertrophie",
+      "fokus",
+      "verbundüzen",
+      "bodybuilding",
+      "rückenbreite"
+    ]
+  },
+  {
+    "id": "0026",
+    "name": "Latzug am Kabelzug",
+    "bodyPart": "Rücken",
+    "equipment": "Kabelzug",
+    "target": "Latissimus (Lats)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Latzug am Kabelzug mit weitem Obergriff' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Lats) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0026.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 7.9,
+    "caloriesPerMinute": 9.5,
+    "description": "Die Übung 'Latzug am Kabelzug mit weitem Obergriff - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Lats) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 26,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "rückenbreite",
+      "bodybuilding",
+      "hypertrophie",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0027",
+    "name": "Latzug",
+    "bodyPart": "Rücken",
+    "equipment": "Kabelzug",
+    "target": "Zentraler Latissimus",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Latzug mit engem Parallelgriff (V-Bar)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Zentraler Latissimus zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0027.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 4.0,
+    "caloriesPerMinute": 4.8,
+    "description": "Die Übung 'Latzug mit engem Parallelgriff (V-Bar) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Zentraler Latissimus im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 27,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "kontraktion",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0028",
+    "name": "Rudern am Kabelzug sitzend (Enger Parallelgriff)",
+    "bodyPart": "Rücken",
+    "equipment": "Kabelzug",
+    "target": "Unterer Latissimus",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Rudern am Kabelzug sitzend (Enger Parallelgriff)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Unterer Latissimus zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0028.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 4.2,
+    "caloriesPerMinute": 5.0,
+    "description": "Die Übung 'Rudern am Kabelzug sitzend (Enger Parallelgriff) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Unterer Latissimus im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 28,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "rückendichte",
+      "bodybuilding",
+      "hypertrophie",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0029",
+    "name": "Rudern am Kabelzug einarmig stehend",
+    "bodyPart": "Rücken",
+    "equipment": "Kabelzug",
+    "target": "Latissimus (Lats)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Rudern am Kabelzug einarmig stehend' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Lats) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0029.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "pull",
+    "met": 4.3,
+    "caloriesPerMinute": 5.2,
+    "description": "Die Übung 'Rudern am Kabelzug einarmig stehend - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Lats) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": true,
+    "popularityRank": 29,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "einseitig",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0030",
+    "name": "Überzüge am Kabelzug",
+    "bodyPart": "Rücken",
+    "equipment": "Kabelzug",
+    "target": "Latissimus (Isoliert)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Überzüge am Kabelzug mit gestreckten Armen (Lat-Pulldown)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Latissimus (Isoliert) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0030.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 4.5,
+    "caloriesPerMinute": 5.4,
+    "description": "Die Übung 'Überzüge am Kabelzug mit gestreckten Armen (Lat-Pulldown) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Latissimus (Isoliert) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 30,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "pump",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0031",
+    "name": "Hyperextensions auf der 45-Grad-Bank für Rückenstrecker",
+    "bodyPart": "Rücken",
+    "equipment": "Eigengewicht",
+    "target": "Erector Spinae (Rückenstrecker)",
+    "secondaryMuscles": [
+      "Bizeps",
+      "Rhomboideen",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Hyperextensions auf der 45-Grad-Bank für Rückenstrecker' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Erector Spinae (Rückenstrecker) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0031.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 4.6,
+    "caloriesPerMinute": 5.5,
+    "description": "Die Übung 'Hyperextensions auf der 45-Grad-Bank für Rückenstrecker - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Erector Spinae (Rückenstrecker) im Bereich Rücken unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 31,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "unterer-rücken",
+      "stabilität",
+      "bodybuilding",
+      "gelenkschonend",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0032",
+    "name": "Schulterdrücken stehend",
+    "bodyPart": "Schultern",
+    "equipment": "Langhantel",
+    "target": "Vordere Schulter (Anterior Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Schulterdrücken stehend mit der Langhantel (OHP)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Vordere Schulter (Anterior Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0032.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 4.8,
+    "caloriesPerMinute": 5.8,
+    "description": "Die Übung 'Schulterdrücken stehend mit der Langhantel (OHP) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Vordere Schulter (Anterior Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 32,
+    "recommendedSets": "4",
+    "recommendedReps": "6-10",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "schulterbreite",
+      "kraft",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0033",
+    "name": "Schulterdrücken sitzend",
+    "bodyPart": "Schultern",
+    "equipment": "Kurzhantel",
+    "target": "Vordere & Seitliche Schulter",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Schulterdrücken sitzend mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Vordere & Seitliche Schulter zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0033.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 5.0,
+    "caloriesPerMinute": 6.0,
+    "description": "Die Übung 'Schulterdrücken sitzend mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Vordere & Seitliche Schulter im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 33,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "schulterbreite",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0034",
+    "name": "Seitheben stehend",
+    "bodyPart": "Schultern",
+    "equipment": "Kurzhantel",
+    "target": "Seitliche Schulter (Lateral Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Seitheben stehend mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Seitliche Schulter (Lateral Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0034.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.1,
+    "caloriesPerMinute": 6.1,
+    "description": "Die Übung 'Seitheben stehend mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Seitliche Schulter (Lateral Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 34,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "schulterbreite",
+      "kontrolliert",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0035",
+    "name": "Seitheben sitzend für strikte Ausführung",
+    "bodyPart": "Schultern",
+    "equipment": "Kurzhantel",
+    "target": "Seitliche Schulter (Lateral Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Seitheben sitzend für strikte Ausführung' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Seitliche Schulter (Lateral Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0035.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.2,
+    "caloriesPerMinute": 6.2,
+    "description": "Die Übung 'Seitheben sitzend für strikte Ausführung - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Seitliche Schulter (Lateral Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 35,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "bodybuilding",
+      "kein-schwung",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0036",
+    "name": "Seitheben einarmig am Kabelzug",
+    "bodyPart": "Schultern",
+    "equipment": "Kabelzug",
+    "target": "Seitliche Schulter (Lateral Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Seitheben einarmig am Kabelzug' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Seitliche Schulter (Lateral Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0036.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.4,
+    "caloriesPerMinute": 6.5,
+    "description": "Die Übung 'Seitheben einarmig am Kabelzug - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Seitliche Schulter (Lateral Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": true,
+    "popularityRank": 36,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "einseitig",
+      "bodybuilding",
+      "hypertrophie",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0037",
+    "name": "Frontheben",
+    "bodyPart": "Schultern",
+    "equipment": "Langhantel",
+    "target": "Vordere Schulter (Anterior Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Frontheben mit der Langhantel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Vordere Schulter (Anterior Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0037.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.5,
+    "caloriesPerMinute": 6.6,
+    "description": "Die Übung 'Frontheben mit der Langhantel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Vordere Schulter (Anterior Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 37,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "bodybuilding",
+      "vordere-schulter",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0038",
+    "name": "Frontheben abwechselnd",
+    "bodyPart": "Schultern",
+    "equipment": "Kurzhantel",
+    "target": "Vordere Schulter (Anterior Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Frontheben abwechselnd mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Vordere Schulter (Anterior Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0038.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.7,
+    "caloriesPerMinute": 6.8,
+    "description": "Die Übung 'Frontheben abwechselnd mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Vordere Schulter (Anterior Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 38,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "kontrolliert",
+      "einseitig",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0039",
+    "name": "Vorgebeugtes Seitheben",
+    "bodyPart": "Schultern",
+    "equipment": "Kurzhantel",
+    "target": "Hintere Schulter (Posterior Deltoid)",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Vorgebeugtes Seitheben mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Hintere Schulter (Posterior Deltoid) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0039.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 5.8,
+    "caloriesPerMinute": 7.0,
+    "description": "Die Übung 'Vorgebeugtes Seitheben mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Hintere Schulter (Posterior Deltoid) im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 39,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "hintere-schulter",
+      "bodybuilding",
+      "rückseite",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0040",
+    "name": "Face-Pulls am Kabelzug",
+    "bodyPart": "Schultern",
+    "equipment": "Kabelzug",
+    "target": "Hintere Schulter & Rotatorenmanschette",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Face-Pulls am Kabelzug mit dem Seil' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Hintere Schulter & Rotatorenmanschette zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0040.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 6.0,
+    "caloriesPerMinute": 7.2,
+    "description": "Die Übung 'Face-Pulls am Kabelzug mit dem Seil - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Hintere Schulter & Rotatorenmanschette im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 40,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "haltung",
+      "gelenkschonend",
+      "hypertrophie",
+      "bodybuilding"
+    ]
+  },
+  {
+    "id": "0041",
+    "name": "Schulterdrücken an der Smith-Maschine (Sitzend)",
+    "bodyPart": "Schultern",
+    "equipment": "Maschine",
+    "target": "Vordere Schulter",
+    "secondaryMuscles": [
+      "Vordere Schulter",
+      "Hintere Schulter",
+      "Trapezmuskel"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Schulterdrücken an der Smith-Maschine (Sitzend)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Vordere Schulter zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0041.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.1,
+    "caloriesPerMinute": 7.3,
+    "description": "Die Übung 'Schulterdrücken an der Smith-Maschine (Sitzend) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Vordere Schulter im Bereich Schultern unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 41,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "maschine",
+      "fokus",
+      "schweres-training",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0042",
+    "name": "Klassische Kniebeuge",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Langhantel",
+    "target": "Quadrizeps & Gluteus",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Klassische Kniebeuge mit der Langhantel (Back Squat)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps & Gluteus zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0042.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.3,
+    "caloriesPerMinute": 7.6,
+    "description": "Die Übung 'Klassische Kniebeuge mit der Langhantel (Back Squat) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps & Gluteus im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 42,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "beintraining",
+      "fokus",
+      "masseaufbau",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0043",
+    "name": "Frontkniebeuge",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Langhantel",
+    "target": "Quadrizeps (Fokus vorderer Oberschenkel)",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Frontkniebeuge mit der Langhantel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps (Fokus vorderer Oberschenkel) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0043.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.5,
+    "caloriesPerMinute": 7.8,
+    "description": "Die Übung 'Frontkniebeuge mit der Langhantel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps (Fokus vorderer Oberschenkel) im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 43,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "rumpfstabilität",
+      "quad-dominant",
+      "verbundübung",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0044",
+    "name": "Beinpresse 45 Grad (Schweres Laden)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Maschine",
+    "target": "Quadrizeps & Gesäß",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Beinpresse 45 Grad (Schweres Laden)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps & Gesäß zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0044.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.6,
+    "caloriesPerMinute": 7.9,
+    "description": "Die Übung 'Beinpresse 45 Grad (Schweres Laden) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps & Gesäß im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 44,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "beintraining",
+      "fokus",
+      "bodybuilding",
+      "maschinengestützt",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0045",
+    "name": "Hackenschmidt-Kniebeuge (Hack Squat Maschine)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Maschine",
+    "target": "Quadrizeps tief",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Hackenschmidt-Kniebeuge (Hack Squat Maschine)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps tief zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0045.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.8,
+    "caloriesPerMinute": 8.2,
+    "description": "Die Übung 'Hackenschmidt-Kniebeuge (Hack Squat Maschine) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps tief im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 45,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "tiefere-kontraktion",
+      "quad-dominant",
+      "bodybuilding",
+      "maschinengestützt",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0046",
+    "name": "Ausfallschritte gehend",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Kurzhantel",
+    "target": "Quadrizeps & Gluteus",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Ausfallschritte gehend mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps & Gluteus zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0046.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 6.9,
+    "caloriesPerMinute": 8.3,
+    "description": "Die Übung 'Ausfallschritte gehend mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps & Gluteus im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 46,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "dynamisch",
+      "einseitig",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0047",
+    "name": "Bulgarische Kniebeuge (Split Squats)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Kurzhantel",
+    "target": "Quadrizeps & Gluteus",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Bulgarische Kniebeuge (Split Squats) mit Kurzhanteln' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps & Gluteus zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0047.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "compound",
+    "force": "push",
+    "met": 7.0,
+    "caloriesPerMinute": 8.4,
+    "description": "Die Übung 'Bulgarische Kniebeuge (Split Squats) mit Kurzhanteln - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als compound-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps & Gluteus im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 47,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "muskelaufbau",
+      "fokus",
+      "einseitig-schwer",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0048",
+    "name": "Beinstrecker-Maschine (Leg Extension)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Maschine",
+    "target": "Quadrizeps (Isoliert)",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Beinstrecker-Maschine (Leg Extension)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Quadrizeps (Isoliert) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0048.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 7.2,
+    "caloriesPerMinute": 8.6,
+    "description": "Die Übung 'Beinstrecker-Maschine (Leg Extension) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Quadrizeps (Isoliert) im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 48,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "pump",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0049",
+    "name": "Beinbeuger-Maschine sitzend (Leg Curl)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Maschine",
+    "target": "Hamstrings (Isoliert)",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Beinbeuger-Maschine sitzend (Leg Curl)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Hamstrings (Isoliert) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0049.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 7.3,
+    "caloriesPerMinute": 8.8,
+    "description": "Die Übung 'Beinbeuger-Maschine sitzend (Leg Curl) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Hamstrings (Isoliert) im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 49,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "fokus-hamstrings",
+      "kontraktion",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0050",
+    "name": "Beinbeuger-Maschine liegend (Leg Curl)",
+    "bodyPart": "Oberschenkel",
+    "equipment": "Maschine",
+    "target": "Hamstrings (Isoliert)",
+    "secondaryMuscles": [
+      "Gesäßmuskulatur",
+      "Hamstrings",
+      "Waden",
+      "Core"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Beinbeuger-Maschine liegend (Leg Curl)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Hamstrings (Isoliert) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0050.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 7.5,
+    "caloriesPerMinute": 9.0,
+    "description": "Die Übung 'Beinbeuger-Maschine liegend (Leg Curl) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Hamstrings (Isoliert) im Bereich Oberschenkel unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 50,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "fokus-hamstrings",
+      "maximale-dehnung",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0051",
+    "name": "Bizeps-Curl",
+    "bodyPart": "Arme",
+    "equipment": "Langhantel",
+    "target": "Bizeps (Masseaufbau)",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Bizeps-Curl mit der Langhantel stehend' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Bizeps (Masseaufbau) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0051.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 7.6,
+    "caloriesPerMinute": 9.1,
+    "description": "Die Übung 'Bizeps-Curl mit der Langhantel stehend - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Bizeps (Masseaufbau) im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 51,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "fokus-arme",
+      "masseaufbau",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0053",
+    "name": "Hammer-Curl",
+    "bodyPart": "Arme",
+    "equipment": "Kurzhantel",
+    "target": "Brachialis & Unterarme",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Hammer-Curl mit Kurzhanteln stehend' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Brachialis & Unterarme zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0053.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 7.9,
+    "caloriesPerMinute": 9.5,
+    "description": "Die Übung 'Hammer-Curl mit Kurzhanteln stehend - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Brachialis & Unterarme im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 53,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "fokus-arme",
+      "unterarme",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0054",
+    "name": "Bizeps-Curl sitzend auf der Schrägbank (Incline Curl)",
+    "bodyPart": "Arme",
+    "equipment": "Kurzhantel",
+    "target": "Langer Kopf des Bizeps (Maximale Dehnung)",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Bizeps-Curl sitzend auf der Schrägbank (Incline Curl)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Langer Kopf des Bizeps (Maximale Dehnung) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0054.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 4.1,
+    "caloriesPerMinute": 4.9,
+    "description": "Die Übung 'Bizeps-Curl sitzend auf der Schrägbank (Incline Curl) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Langer Kopf des Bizeps (Maximale Dehnung) im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 54,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "dehnung",
+      "freie-gewichte",
+      "fokus",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0055",
+    "name": "Konzentrations-Curl sitzend",
+    "bodyPart": "Arme",
+    "equipment": "Kurzhantel",
+    "target": "Bizeps Peak",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Konzentrations-Curl sitzend' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Bizeps Peak zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0055.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 4.2,
+    "caloriesPerMinute": 5.0,
+    "description": "Die Übung 'Konzentrations-Curl sitzend - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Bizeps Peak im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 55,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "strikte-form",
+      "peak",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0056",
+    "name": "Trizepsdrücken am Kabelzug",
+    "bodyPart": "Arme",
+    "equipment": "Kabelzug",
+    "target": "Trizeps (Hufeisen-Form)",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Trizepsdrücken am Kabelzug mit dem Seil' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Trizeps (Hufeisen-Form) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0056.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 4.4,
+    "caloriesPerMinute": 5.3,
+    "description": "Die Übung 'Trizepsdrücken am Kabelzug mit dem Seil - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Trizeps (Hufeisen-Form) im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 56,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "kabelzug",
+      "fokus",
+      "fokus-arme",
+      "pump",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0058",
+    "name": "Stirndrücken",
+    "bodyPart": "Arme",
+    "equipment": "Langhantel",
+    "target": "Trizeps (Masse)",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Stirndrücken mit der SZ-Stange liegend (Skull Crusher)' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Trizeps (Masse) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0058.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 4.7,
+    "caloriesPerMinute": 5.6,
+    "description": "Die Übung 'Stirndrücken mit der SZ-Stange liegend (Skull Crusher) - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Trizeps (Masse) im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 58,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "freie-gewichte",
+      "fokus",
+      "fokus-arme",
+      "masseaufbau",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0059",
+    "name": "Trizeps-Kickbacks",
+    "bodyPart": "Arme",
+    "equipment": "Kurzhantel",
+    "target": "Trizeps (Endkontraktion)",
+    "secondaryMuscles": [
+      "Unterarme",
+      "Armbeuger",
+      "Handgelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Trizeps-Kickbacks mit der Kurzhantel' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Trizeps (Endkontraktion) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0059.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 4.8,
+    "caloriesPerMinute": 5.8,
+    "description": "Die Übung 'Trizeps-Kickbacks mit der Kurzhantel - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Trizeps (Endkontraktion) im Bereich Arme unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 59,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "strikte-form",
+      "kontraktion",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0060",
+    "name": "Wadenheben stehend an der Maschine",
+    "bodyPart": "Waden",
+    "equipment": "Maschine",
+    "target": "Zwillingswadenmuskel (Gastrocnemius)",
+    "secondaryMuscles": [
+      "Schollenmuskel",
+      "Sprunggelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Wadenheben stehend an der Maschine' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Zwillingswadenmuskel (Gastrocnemius) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0060.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.0,
+    "caloriesPerMinute": 6.0,
+    "description": "Die Übung 'Wadenheben stehend an der Maschine - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Zwillingswadenmuskel (Gastrocnemius) im Bereich Waden unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 60,
+    "recommendedSets": "4",
+    "recommendedReps": "6-10",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "kraft",
+      "waden",
+      "bodybuilding",
+      "hypertrophie",
+      "konstante-spannung"
+    ]
+  },
+  {
+    "id": "0061",
+    "name": "Wadenheben sitzend an der Maschine",
+    "bodyPart": "Waden",
+    "equipment": "Maschine",
+    "target": "Schollenmuskel (Soleus)",
+    "secondaryMuscles": [
+      "Schollenmuskel",
+      "Sprunggelenke"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Wadenheben sitzend an der Maschine' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Schollenmuskel (Soleus) zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0061.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.2,
+    "caloriesPerMinute": 6.2,
+    "description": "Die Übung 'Wadenheben sitzend an der Maschine - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Schollenmuskel (Soleus) im Bereich Waden unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 61,
+    "recommendedSets": "3",
+    "recommendedReps": "10-15",
+    "joint_focus": "Knie & Hüfte",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fokus",
+      "sitzend",
+      "waden",
+      "bodybuilding",
+      "hypertrophie",
+      "isolationsübung"
+    ]
+  },
+  {
+    "id": "0062",
+    "name": "Bauchpressen (Crunches) auf der Matte",
+    "bodyPart": "Taille",
+    "equipment": "Eigengewicht",
+    "target": "Gerade Bauchmuskeln",
+    "secondaryMuscles": [
+      "Schräge Bauchmuskeln",
+      "Quer verlaufende Bauchmuskeln"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Bauchpressen (Crunches) auf der Matte' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Gerade Bauchmuskeln zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0062.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "push",
+    "met": 5.3,
+    "caloriesPerMinute": 6.4,
+    "description": "Die Übung 'Bauchpressen (Crunches) auf der Matte - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'push' ist sie optimal, um den Gerade Bauchmuskeln im Bereich Taille unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 62,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "ohne-geräte",
+      "anfängerfreundlich",
+      "fokus",
+      "core",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  },
+  {
+    "id": "0063",
+    "name": "Beinheben hängend an der Klimmzugstange",
+    "bodyPart": "Core",
+    "equipment": "Eigengewicht",
+    "target": "Untere Bauchmuskeln & Hüftbeuger",
+    "secondaryMuscles": [
+      "Bauchmuskeln",
+      "Schräge Bauchmuskeln",
+      "Unterer Rücken"
+    ],
+    "instructions": [
+      "Nimm die korrekte, stabile Ausgangsposition für 'Beinheben hängend an der Klimmzugstange' ein.",
+      "Führe die Arbeitsphase kontrolliert aus, um die Belastung gezielt auf den Untere Bauchmuskeln & Hüftbeuger zu lenken.",
+      "Halte die Kontraktion am Peak, um maximale Hypertrophie-Reize zu setzen.",
+      "Nutze eine betonte, langsame exzentrische Phase, um Mikrorisse im Muskelgewebe zu provozieren."
+    ],
+    "gifUrl": "https://api.workoutxapp.com/v1/gifs/0063.gif",
+    "category": "strength",
+    "difficulty": "Anfänger",
+    "mechanic": "isolation",
+    "force": "pull",
+    "met": 5.4,
+    "caloriesPerMinute": 6.5,
+    "description": "Die Übung 'Beinheben hängend an der Klimmzugstange - Fokus Muskelgefühl' ist eine dedizierte Bodybuilding-Bewegung. Als isolation-Übung mit der Kraftrichtung 'pull' ist sie optimal, um den Untere Bauchmuskeln & Hüftbeuger im Bereich Core unter maximale mechanische Spannung zu setzen.",
+    "isUnilateral": false,
+    "popularityRank": 63,
+    "recommendedSets": "4",
+    "recommendedReps": "8-12",
+    "joint_focus": "Schultern",
+    "intensity_level": "Moderat",
+    "movement_tags": [
+      "fortgeschritten",
+      "fokus",
+      "rumpfstabilität",
+      "core",
+      "bodybuilding",
+      "hypertrophie"
+    ]
+  }
+]
