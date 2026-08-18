@@ -11,7 +11,7 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import Auth from '@/components/Auth';
 import { authClient } from '@/lib/auth';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = '';
 
 export default function App() {
   const { data: session, isPending } = authClient.useSession();

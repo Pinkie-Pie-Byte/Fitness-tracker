@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://fitness-tracker-egwt.onrender.com/api/$1"
+    }
+  ]
+}
