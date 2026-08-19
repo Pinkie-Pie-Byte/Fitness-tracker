@@ -24,7 +24,8 @@ const workoutSchema = new mongoose.Schema({
     weight: Number,
     bodyPart: String,
     target: String,
-    secondaryMuscles: [String]
+    secondaryMuscles: [String],
+    imageUrl: String
   }]
 });
 const Workout = mongoose.model('Workout', workoutSchema);
@@ -39,7 +40,8 @@ const workoutLogSchema = new mongoose.Schema({
     actualSets: Number,
     actualReps: Number,
     actualWeight: Number,
-    difficulty: Number
+    difficulty: Number,
+    imageUrl: String
   }]
 });
 const WorkoutLog = mongoose.model('WorkoutLog', workoutLogSchema);

@@ -28,6 +28,7 @@ export default function App() {
   const [exSets, setExSets] = useState('');
   const [exReps, setExReps] = useState('');
   const [exWeight, setExWeight] = useState('');
+  const [exImageUrl, setExImageUrl] = useState('');
 
   // Execution Modal State
   const [executionWorkout, setExecutionWorkout] = useState<any>(null);
@@ -77,9 +78,10 @@ export default function App() {
       reps: Number(exReps),
       weight: Number(exWeight) || 0,
       bodyPart: exObj?.bodyPart || '',
-      target: exObj?.target || ''
+      target: exObj?.target || '',
+      imageUrl: exImageUrl
     }]);
-    setExName(''); setExSets(''); setExReps(''); setExWeight('');
+    setExName(''); setExSets(''); setExReps(''); setExWeight(''); setExImageUrl('');
   };
 
   const handleSaveWorkout = async () => {
@@ -109,7 +111,8 @@ export default function App() {
       actualSets: ex.sets,
       actualReps: ex.reps,
       actualWeight: ex.weight,
-      difficulty: 7
+      difficulty: 7,
+      imageUrl: ex.imageUrl
     })));
   };
 
@@ -208,8 +211,11 @@ export default function App() {
                 {pendingExercises.length > 0 && (
                   <ul className="space-y-2 mb-4">
                     {pendingExercises.map((ex, i) => (
-                      <li key={i} className="text-xs bg-background p-2 rounded border flex justify-between">
-                        <span>{ex.name}</span>
+                      <li key={i} className="text-xs bg-background p-2 rounded border flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          {ex.imageUrl && <img src={ex.imageUrl} className="w-8 h-8 object-cover rounded" alt="thumb" />}
+                          <span>{ex.name}</span>
+                        </div>
                         <span>{ex.sets}x{ex.reps} @ {ex.weight}kg</span>
                       </li>
                     ))}
@@ -232,6 +238,7 @@ export default function App() {
                   <Input placeholder="Wdh." type="number" value={exReps} onChange={e => setExReps(e.target.value)} />
                   <Input placeholder="kg" type="number" value={exWeight} onChange={e => setExWeight(e.target.value)} />
                 </div>
+                <Input placeholder="Bild-URL (Optional)" type="url" value={exImageUrl} onChange={e => setExImageUrl(e.target.value)} />
                 <Button variant="secondary" className="w-full" onClick={handleAddExercise}>Hinzufügen</Button>
               </div>
             </CardContent>
@@ -275,7 +282,10 @@ export default function App() {
                         <TableBody>
                           {w.exercises?.map((ex: any, i: number) => (
                             <TableRow key={i}>
-                              <TableCell className="font-medium">{ex.name}</TableCell>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                {ex.imageUrl && <img src={ex.imageUrl} className="w-8 h-8 object-cover rounded" alt="thumb" />}
+                                {ex.name}
+                              </TableCell>
                               <TableCell>{ex.sets}x{ex.reps} @ {ex.weight}kg</TableCell>
                             </TableRow>
                           ))}
@@ -331,7 +341,12 @@ export default function App() {
           <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-4">
             {executionData.map((ex, i) => (
               <div key={i} className="p-4 border rounded-lg space-y-4">
-                <h4 className="font-medium">{ex.name}</h4>
+                <div className="flex gap-4 items-start">
+                  {ex.imageUrl && (
+                    <img src={ex.imageUrl} alt={ex.name} className="w-20 h-20 object-cover rounded-md" />
+                  )}
+                  <h4 className="font-medium">{ex.name}</h4>
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   <div>
                     <Label>Sätze</Label>
