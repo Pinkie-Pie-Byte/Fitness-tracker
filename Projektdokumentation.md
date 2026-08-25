@@ -100,6 +100,13 @@ Alle folgenden Routen (mit Ausnahme von `/api/exercises`) sind durch eine server
 - **Read:** `GET /api/exercises`
   - *Wirkung:* Liest lokal die Datei `bodybuilding_top_200.json` aus und stellt dem Frontend eine Datenbank aus über 200 standardisierten Bodybuilding-Übungen zur Verfügung, um beim Erstellen von Plänen Vorschläge (Autocomplete) bieten zu können.
 
+### 4.5 Qualitätssicherung (API-Testing mit Postman)
+Entsprechend den Projektvorgaben wurden alle Backend-Endpunkte vor der Integration in das React-Frontend intensiv mit der Software **Postman** getestet.
+1. **Authentifizierungstest:** Zunächst wurde ein POST-Request an `/api/auth/sign-in` gesendet, um einen gültigen Session-Cookie zu erhalten.
+2. **CRUD-Tests:** Anschließend wurden POST, GET, PUT und DELETE Requests gegen die `/api/workouts`- und `/api/logs`-Routen gefeuert. 
+3. **Validierungstests:** Es wurden bewusst unvollständige Requests (z.B. Workouts ohne Titel oder Logs mit negativen Gewichten) via Postman gesendet, um zu verifizieren, dass das Backend diese mit dem Statuscode `400 Bad Request` und einer sprechenden Fehlermeldung ablehnt.
+4. **Autorisierungstest:** Anfragen ohne vorherigen Login wurden erfolgreich mit `401 Unauthorized` vom System geblockt.
+
 
 ## 5. Reflexion zum KI-Einsatz
 Entsprechend der Projektvorgaben wurden KI-Tools als Assistenz zur Effizienzsteigerung eingesetzt. Die KI fungierte hierbei primär als "Pair-Programming"-Partner und technischer Berater. 
