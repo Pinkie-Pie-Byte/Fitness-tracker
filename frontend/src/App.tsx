@@ -11,32 +11,37 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import Auth from '@/components/Auth';
 import { authClient } from '@/lib/auth';
 
-const API_URL = '';
+// Durch unseren Reverse-Proxy in Vercel können wir einfach den relativen Pfad nutzen
+const API_URL = ''; 
 
 export default function App() {
+  // --- AUTHENTIFIZIERUNG ---
+  // Prüft, ob der Nutzer gerade eingeloggt ist
   const { data: session, isPending } = authClient.useSession();
 
-  const [workouts, setWorkouts] = useState<any[]>([]);
-  const [logs, setLogs] = useState<any[]>([]);
-  const [availableExercises, setAvailableExercises] = useState<any[]>([]);
+  // --- DATEN-STATE (Zustand der App) ---
+  const [workouts, setWorkouts] = useState<any[]>([]); // Liste aller gespeicherten Trainingspläne
+  const [logs, setLogs] = useState<any[]>([]); // Liste aller durchgeführten Trainings (fürs Diagramm)
+  const [availableExercises, setAvailableExercises] = useState<any[]>([]); // Die 200 Bodybuilding-Übungen aus der JSON
   
-  // Form State
+  // --- FORMULAR-STATE (Für neue Workouts) ---
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState('');
-  const [pendingExercises, setPendingExercises] = useState<any[]>([]);
+  const [pendingExercises, setPendingExercises] = useState<any[]>([]); // Übungen, die gerade in den neuen Plan eingefügt werden
   const [exName, setExName] = useState('');
   const [exSets, setExSets] = useState('');
   const [exReps, setExReps] = useState('');
   const [exWeight, setExWeight] = useState('');
   const [exImageUrl, setExImageUrl] = useState('');
 
-  // Execution Modal State
-  const [executionWorkout, setExecutionWorkout] = useState<any>(null);
-  const [executionData, setExecutionData] = useState<any[]>([]);
+  // --- AUSFÜHRUNGS-MODAL (Wenn man auf "Starten" klickt) ---
+  const [executionWorkout, setExecutionWorkout] = useState<any>(null); // Welches Workout wird gerade gemacht?
+  const [executionData, setExecutionData] = useState<any[]>([]); // Die eingetragenen Gewichte während dem Training
 
-  // Chart State
-  const [chartFilter, setChartFilter] = useState('all');
+  // --- DIAGRAMM-STATE ---
+  const [chartFilter, setChartFilter] = useState('all'); // Filtert das Diagramm (entweder alle, oder eine bestimmte Übung)
 
+  // Lade alle Daten vom Server, sobald der Nutzer eingeloggt ist (session existiert)
   useEffect(() => {
     if (session) {
       fetchWorkouts();
@@ -45,14 +50,18 @@ export default function App() {
     }
   }, [session]);
 
+  // --- SERVER-ANFRAGEN (API CALLS) ---
+
+  // Holt alle Trainingspläne aus der Datenbank
   const fetchWorkouts = async () => {
     const res = await fetch(`${API_URL}/api/workouts`, { credentials: 'include' });
     if(res.ok) {
       const data = await res.json();
-      setWorkouts(data);
+      setWorkouts(data); // Speichert die Daten im React-State
     }
   };
 
+  // Holt die 200 Basis-Übungen
   const fetchExercises = async () => {
     const res = await fetch(`${API_URL}/api/exercises`, { credentials: 'include' });
     if(res.ok) {
@@ -61,6 +70,7 @@ export default function App() {
     }
   };
 
+  // Holt die Trainings-Historie
   const fetchLogs = async () => {
     const res = await fetch(`${API_URL}/api/logs`, { credentials: 'include' });
     if(res.ok) {
@@ -69,9 +79,15 @@ export default function App() {
     }
   };
 
+  // --- LOGIK-FUNKTIONEN ---
+
+  // Fügt dem aktuell erstellten Trainingsplan eine neue Übung hinzu (noch nicht in der DB gespeichert)
   const handleAddExercise = () => {
-    if (!exName || !exSets || !exReps) return;
+    if (!exName || !exSets || !exReps) return; // Verhindert leere Einträge
+    
+    // Sucht die Übung in der JSON-Liste, um zusätzliche Infos (wie Zielmuskel) zu bekommen
     const exObj = availableExercises.find((e: any) => e.name === exName);
+    
     setPendingExercises([...pendingExercises, {
       name: exName,
       sets: Number(exSets),
@@ -81,29 +97,38 @@ export default function App() {
       target: exObj?.target || '',
       imageUrl: exImageUrl
     }]);
+    
+    // Felder nach dem Hinzufügen wieder leeren
     setExName(''); setExSets(''); setExReps(''); setExWeight(''); setExImageUrl('');
   };
 
+  // Speichert den komplett fertigen Trainingsplan in der Datenbank
   const handleSaveWorkout = async () => {
-    if (!title) return alert('Titel erforderlich');
+    if (!title) return alert('Titel erforderlich'); // Pflichtfeld
+    
     const newWorkout = { title, notes, exercises: pendingExercises };
+    
     await fetch(`${API_URL}/api/workouts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newWorkout),
+      body: JSON.stringify(newWorkout), // Schickt die Daten als JSON-Text an den Server
       credentials: 'include'
     });
+    
+    // Formular aufräumen und die Liste neu vom Server laden
     setTitle(''); setNotes(''); setPendingExercises([]);
     fetchWorkouts();
   };
 
+  // Löscht einen Trainingsplan
   const handleDeleteWorkout = async (id: string) => {
-    if (!confirm('Wirklich löschen?')) return;
+    if (!confirm('Wirklich löschen?')) return; // Sicherheits-Abfrage
     await fetch(`${API_URL}/api/workouts/${id}`, { method: 'DELETE', credentials: 'include' });
     fetchWorkouts();
     fetchLogs();
   };
 
+  // Öffnet das "Training Starten" Fenster und bereitet die Eingabefelder vor
   const openExecution = (w: any) => {
     setExecutionWorkout(w);
     setExecutionData(w.exercises.map((ex: any) => ({
@@ -111,11 +136,12 @@ export default function App() {
       actualSets: ex.sets,
       actualReps: ex.reps,
       actualWeight: ex.weight,
-      difficulty: 7,
+      difficulty: 7, // Standard-Anstrengung (RPE)
       imageUrl: ex.imageUrl
     })));
   };
 
+  // Speichert das abgeschlossene Training in der Datenbank (für das Diagramm)
   const submitExecution = async () => {
     if(!executionWorkout) return;
     const logData = {
@@ -129,11 +155,13 @@ export default function App() {
       body: JSON.stringify(logData),
       credentials: 'include'
     });
-    setExecutionWorkout(null);
-    fetchLogs();
+    setExecutionWorkout(null); // Schließt das Fenster
+    fetchLogs(); // Aktualisiert das Diagramm
   };
 
-  // Chart Logic
+  // --- DIAGRAMM BERECHNUNGEN (useMemo sorgt dafür, dass nur bei Bedarf neu gerechnet wird) ---
+  
+  // Sammelt alle einzigartigen Übungen aus der Historie für das Dropdown-Menü
   const uniqueOptions = useMemo(() => {
     const map = new Map();
     logs.forEach(log => {
@@ -145,14 +173,18 @@ export default function App() {
     return Array.from(map.entries()).sort((a, b) => a[1].localeCompare(b[1]));
   }, [logs]);
 
+  // Berechnet die Daten für den Liniengraph (entweder Gesamtarbeit oder spezifisches Gewicht)
   const chartData = useMemo(() => {
     const data: any[] = [];
     logs.forEach(log => {
-      const date = new Date(log.date).toLocaleDateString('de-DE');
+      const date = new Date(log.date).toLocaleDateString('de-DE'); // Datum für die X-Achse
+      
       if (chartFilter === 'all') {
+        // Gesamtvolumen = Sätze * Wiederholungen * Gewicht
         const totalVolume = log.exercises.reduce((sum: number, ex: any) => sum + (ex.actualSets * ex.actualReps * ex.actualWeight), 0);
         data.push({ date, value: totalVolume });
       } else {
+        // Filter nach einer spezifischen Übung
         const [wId, exName] = chartFilter.split('|');
         if (log.workoutId === wId) {
           const ex = log.exercises.find((e: any) => e.name === exName);
@@ -163,19 +195,26 @@ export default function App() {
     return data;
   }, [logs, chartFilter]);
 
+  // --- RENDER-LOGIK (Was sieht der Nutzer auf dem Bildschirm?) ---
+
+  // Zeige Ladebildschirm, während geprüft wird ob Nutzer eingeloggt ist
   if (isPending) {
     return <div className="p-8 text-center mt-20">Laden...</div>;
   }
 
+  // Zeige den Login-Screen (Auth-Komponente), wenn kein Nutzer gefunden wurde
   if (!session) {
     return <Auth onLogin={() => window.location.reload()} />;
   }
 
+  // Das Haupt-Dashboard für eingeloggte Nutzer
   return (
     <div className="container mx-auto p-4 md:p-8 space-y-8">
+      {/* KOPFZEILE (Header) */}
       <header className="flex justify-between items-center pb-4 border-b">
         <div className="flex items-center gap-3">
           <div className="bg-primary p-2 rounded-lg text-primary-foreground">
+            {/* Hantel SVG Icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v16"/><path d="M18 4v16"/><path d="M4 8h16"/><path d="M4 16h16"/><path d="M2 12h20"/></svg>
           </div>
           <h1 className="text-3xl font-sans font-black tracking-tighter uppercase italic">
@@ -188,14 +227,17 @@ export default function App() {
         }}>Abmelden</Button>
       </header>
 
+      {/* HAUPT-INHALTSBEREICH (Grid-Layout: Links Formular, Rechts Liste & Chart) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* LEFT COLUMN: FORM */}
+        
+        {/* LINKE SPALTE: FORMULAR ZUM ERSTELLEN VON WORKOUTS */}
         <div className="space-y-6">
           <Card>
             <CardHeader>
               <CardTitle>Neues Workout</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              {/* Titel & Notizen Inputs */}
               <div className="space-y-2">
                 <Label>Titel</Label>
                 <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="z.B. Push Day" />
@@ -205,9 +247,11 @@ export default function App() {
                 <Input value={notes} onChange={e => setNotes(e.target.value)} placeholder="Wie hast du dich gefühlt?" />
               </div>
 
+              {/* Übungs-Hinzufügen-Box */}
               <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg space-y-4">
                 <h4 className="font-medium text-sm">Übungen hinzufügen</h4>
                 
+                {/* Liste der bereits hinzugefügten, aber noch nicht gespeicherten Übungen */}
                 {pendingExercises.length > 0 && (
                   <ul className="space-y-2 mb-4">
                     {pendingExercises.map((ex, i) => (
@@ -222,12 +266,14 @@ export default function App() {
                   </ul>
                 )}
 
+                {/* Eingabefelder für eine neue Übung */}
                 <Input 
                   list="exercise-list"
                   placeholder="Übung eingeben oder wählen..." 
                   value={exName} 
                   onChange={(e) => setExName(e.target.value)} 
                 />
+                {/* Datalist ermöglicht das Dropdown mit Vorschlägen aus unserer JSON */}
                 <datalist id="exercise-list">
                   {availableExercises.map(ex => (
                     <option key={ex.id || ex.name} value={ex.name} />
@@ -239,6 +285,7 @@ export default function App() {
                   <Input placeholder="kg" type="number" value={exWeight} onChange={e => setExWeight(e.target.value)} />
                 </div>
                 <Input placeholder="Bild-URL (Optional)" type="url" value={exImageUrl} onChange={e => setExImageUrl(e.target.value)} />
+                
                 <Button variant="secondary" className="w-full" onClick={handleAddExercise}>Hinzufügen</Button>
               </div>
             </CardContent>
@@ -248,8 +295,10 @@ export default function App() {
           </Card>
         </div>
 
-        {/* RIGHT COLUMN: LIST & CHART */}
+        {/* RECHTE SPALTE: LISTE ALLER WORKOUTS & DIAGRAMM */}
         <div className="md:col-span-2 space-y-8">
+          
+          {/* WORKOUT LISTE */}
           <div>
             <h2 className="text-2xl font-bold mb-4">Deine Trainings</h2>
             {workouts.length === 0 ? (
@@ -298,9 +347,12 @@ export default function App() {
             )}
           </div>
 
+          {/* FORTSCHRITTS-DIAGRAMM */}
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">Fortschritt (Gewicht)</h2>
+              
+              {/* Filter-Dropdown für das Diagramm */}
               <Select value={chartFilter} onValueChange={(v) => setChartFilter(v || 'all')}>
                 <SelectTrigger className="w-[300px] overflow-hidden">
                   <span className="truncate flex-1 text-left">
@@ -317,6 +369,7 @@ export default function App() {
             </div>
             
             <Card className="p-4 h-[400px]">
+              {/* Recharts Liniengraph */}
               <ChartContainer config={{ value: { label: "Wert", color: "hsl(142.1 76.2% 36.3%)" } }} className="h-full w-full">
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -331,7 +384,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Execution Modal */}
+      {/* TRAINING STARTEN - POPUP (MODAL) */}
       <Dialog open={!!executionWorkout} onOpenChange={(open) => !open && setExecutionWorkout(null)}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
@@ -347,6 +400,7 @@ export default function App() {
                   )}
                   <h4 className="font-medium">{ex.name}</h4>
                 </div>
+                {/* Felder zum Eintragen des aktuellen Trainings */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   <div>
                     <Label>Sätze</Label>
