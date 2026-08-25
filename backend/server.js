@@ -108,13 +108,23 @@ async function startServer() {
       res.json(workouts);
     });
 
-    // ROUTE: Speichert einen neuen Trainingsplan in der Datenbank
+    // ROUTE: Speichert einen neuen Trainingsplan in der Datenbank (Create)
     app.post('/api/workouts', async (req, res) => {
       const workout = await Workout.create({ ...req.body, userId: req.user.id });
       res.json(workout);
     });
 
-    // ROUTE: Löscht einen Trainingsplan und die dazugehörigen Trainings-Logs
+    // ROUTE: Aktualisiert einen bestehenden Trainingsplan (Update - wichtig für CRUD!)
+    app.put('/api/workouts/:id', async (req, res) => {
+      const updatedWorkout = await Workout.findOneAndUpdate(
+        { _id: req.params.id, userId: req.user.id },
+        req.body,
+        { new: true } // Gibt das aktualisierte Objekt zurück
+      );
+      res.json(updatedWorkout);
+    });
+
+    // ROUTE: Löscht einen Trainingsplan und die dazugehörigen Trainings-Logs (Delete)
     app.delete('/api/workouts/:id', async (req, res) => {
       await Workout.findOneAndDelete({ _id: req.params.id, userId: req.user.id });
       await WorkoutLog.deleteMany({ workoutId: req.params.id, userId: req.user.id });
