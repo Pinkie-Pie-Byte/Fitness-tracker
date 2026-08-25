@@ -110,8 +110,27 @@ async function startServer() {
 
     // ROUTE: Speichert einen neuen Trainingsplan in der Datenbank (Create)
     app.post('/api/workouts', async (req, res) => {
-      const workout = await Workout.create({ ...req.body, userId: req.user.id });
-      res.json(workout);
+      // Serverseitige Validierung der Eingaben
+      const { title, exercises } = req.body;
+      if (!title || typeof title !== 'string' || title.trim() === '') {
+        return res.status(400).json({ error: 'Titel ist ein Pflichtfeld und darf nicht leer sein.' });
+      }
+      if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
+        return res.status(400).json({ error: 'Ein Trainingsplan muss mindestens eine Übung enthalten.' });
+      }
+      // Validierung für jede Übung im Plan
+      for (const ex of exercises) {
+        if (!ex.name || typeof ex.name !== 'string') return res.status(400).json({ error: 'Jede Übung benötigt einen gültigen Namen.' });
+        if (ex.sets <= 0 || ex.reps <= 0) return res.status(400).json({ error: 'Sätze und Wiederholungen müssen positive Zahlen sein.' });
+        if (ex.weight < 0) return res.status(400).json({ error: 'Das Gewicht darf nicht negativ sein.' });
+      }
+
+      try {
+        const workout = await Workout.create({ ...req.body, userId: req.user.id });
+        res.json(workout);
+      } catch (err) {
+        res.status(500).json({ error: 'Interner Serverfehler beim Speichern.' });
+      }
     });
 
     // ROUTE: Aktualisiert einen bestehenden Trainingsplan (Update - wichtig für CRUD!)
@@ -139,8 +158,25 @@ async function startServer() {
 
     // ROUTE: Speichert ein neu absolviertes Training
     app.post('/api/logs', async (req, res) => {
-      const log = await WorkoutLog.create({ ...req.body, userId: req.user.id });
-      res.json(log);
+      // Serverseitige Validierung der Logs
+      const { workoutId, exercises } = req.body;
+      if (!workoutId) return res.status(400).json({ error: 'Workout-ID fehlt.' });
+      if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
+        return res.status(400).json({ error: 'Es muss mindestens eine geloggte Übung übergeben werden.' });
+      }
+      
+      for (const ex of exercises) {
+        if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
+          return res.status(400).json({ error: 'Werte für Sätze, Wiederholungen und Gewicht dürfen nicht negativ sein.' });
+        }
+      }
+
+      try {
+        const log = await WorkoutLog.create({ ...req.body, userId: req.user.id });
+        res.json(log);
+      } catch (err) {
+        res.status(500).json({ error: 'Interner Serverfehler beim Speichern des Logs.' });
+      }
     });
 
     // 5. Server hochfahren

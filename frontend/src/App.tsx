@@ -83,7 +83,16 @@ export default function App() {
 
   // Fügt dem aktuell erstellten Trainingsplan eine neue Übung hinzu (noch nicht in der DB gespeichert)
   const handleAddExercise = () => {
-    if (!exName || !exSets || !exReps) return; // Verhindert leere Einträge
+    // Clientseitige Validierung der Formular-Eingaben
+    if (!exName || !exSets || !exReps) {
+      return alert('Bitte fülle Übungsname, Sätze und Wiederholungen aus.');
+    }
+    if (Number(exSets) <= 0 || Number(exReps) <= 0) {
+      return alert('Sätze und Wiederholungen müssen positiv sein.');
+    }
+    if (Number(exWeight) < 0) {
+      return alert('Gewicht darf nicht negativ sein.');
+    }
     
     // Sucht die Übung in der JSON-Liste, um zusätzliche Infos (wie Zielmuskel) zu bekommen
     const exObj = availableExercises.find((e: any) => e.name === exName);
@@ -104,7 +113,13 @@ export default function App() {
 
   // Speichert den komplett fertigen Trainingsplan in der Datenbank
   const handleSaveWorkout = async () => {
-    if (!title) return alert('Titel erforderlich'); // Pflichtfeld
+    // Clientseitige Validierung vor dem Speichern
+    if (!title || title.trim() === '') {
+      return alert('Fehler: Bitte gib einen Titel für das Workout ein.');
+    }
+    if (pendingExercises.length === 0) {
+      return alert('Fehler: Bitte füge mindestens eine Übung zum Workout hinzu.');
+    }
     
     const newWorkout = { title, notes, exercises: pendingExercises };
     
@@ -144,6 +159,14 @@ export default function App() {
   // Speichert das abgeschlossene Training in der Datenbank (für das Diagramm)
   const submitExecution = async () => {
     if(!executionWorkout) return;
+    
+    // Clientseitige Validierung der Log-Eingaben
+    for (const ex of executionData) {
+      if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
+        return alert('Fehler: Bitte gib keine negativen Zahlen für Sätze, Wiederholungen oder Gewicht ein.');
+      }
+    }
+
     const logData = {
       workoutId: executionWorkout._id,
       workoutTitle: executionWorkout.title,
