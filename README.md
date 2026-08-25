@@ -13,7 +13,13 @@ Dieses Projekt wurde als moderne **Client-Server-Architektur** im klassischen ME
 - **R**eact / Vite (Frontend Benutzeroberfläche)
 - **N**ode.js (Laufzeitumgebung für das Backend auf Render.com)
 
-**Zusätzlich verwendete Technologien:**
+**Geforderte Kerntechnologien:**
+Das Fundament dieses Projekts bilden die klassischen Webtechnologien, auf denen die Frameworks aufbauen:
+- **HTML5:** Strukturierung der Benutzeroberfläche (JSX in React).
+- **CSS3:** Styling und Layout (erweitert durch Tailwind CSS).
+- **JavaScript:** Die gesamte Logik im Frontend und Backend.
+
+**Zusätzlich verwendete Technologien & Bibliotheken:**
 - **Tailwind CSS & Shadcn UI:** Für ein modernes, ansprechendes und responsives Design.
 - **Better-Auth:** Für eine sichere Nutzer-Authentifizierung (Login/Registrierung) inkl. Cross-Domain Cookie-Handling.
 - **Recharts:** Für die grafische Darstellung des Trainingsfortschritts (Liniendiagramme).
