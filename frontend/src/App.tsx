@@ -57,7 +57,7 @@ export default function App() {
 
   // --- DIAGRAMM-STATE ---
   const [chartFilter, setChartFilter] = useState('all'); // Filtert das Diagramm (entweder alle, oder eine bestimmte Übung)
-
+  const [showAgb, setShowAgb] = useState(false); // Zeigt das Borat AGB Modal
   // Lade alle Daten vom Server, sobald der Nutzer eingeloggt ist (session existiert)
   useEffect(() => {
     if (session) {
@@ -507,9 +507,17 @@ export default function App() {
 
       {/* FOOTER MIT AGB UND BILD */}
       <footer className="mt-12 pt-8 pb-12 border-t text-center text-muted-foreground flex flex-col items-center justify-center">
-        <p className="mb-4 text-sm font-medium">AGB - Allgemeine Geschäftsbedingungen</p>
-        <img src="/agb-borat.png" alt="AGB" className="w-64 rounded-lg shadow-lg" />
+        <p className="text-sm font-medium cursor-pointer hover:underline hover:text-primary transition-colors" onClick={() => setShowAgb(true)}>
+          AGB - Allgemeine Geschäftsbedingungen
+        </p>
       </footer>
+
+      {/* AGB MODAL (BORAT) */}
+      <Dialog open={showAgb} onOpenChange={setShowAgb}>
+        <DialogContent className="max-w-4xl border-none bg-transparent shadow-none p-0 flex justify-center">
+          <img src="/agb-borat.png" alt="AGB" className="max-h-[85vh] object-contain rounded-2xl shadow-2xl" />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
