@@ -33,6 +33,23 @@ export default function App() {
   const [exReps, setExReps] = useState('');
   const [exWeight, setExWeight] = useState('');
   const [exImageUrl, setExImageUrl] = useState('');
+  const [exMuscleFilter, setExMuscleFilter] = useState('all');
+
+  // Holt alle einzigartigen Muskelgruppen aus den geladenen Übungen
+  const uniqueMuscleGroups = useMemo(() => {
+    const groups = new Set<string>();
+    availableExercises.forEach(ex => {
+      if (ex.bodyPart) groups.add(ex.bodyPart);
+      // Alternativ: if (ex.target) groups.add(ex.target); 
+    });
+    return Array.from(groups).sort();
+  }, [availableExercises]);
+
+  // Gefilterte Liste der Übungen für das Dropdown
+  const filteredExercises = useMemo(() => {
+    if (exMuscleFilter === 'all') return availableExercises;
+    return availableExercises.filter(ex => ex.bodyPart === exMuscleFilter);
+  }, [availableExercises, exMuscleFilter]);
 
   // --- AUSFÜHRUNGS-MODAL (Wenn man auf "Starten" klickt) ---
   const [executionWorkout, setExecutionWorkout] = useState<any>(null); // Welches Workout wird gerade gemacht?
@@ -290,15 +307,30 @@ export default function App() {
                 )}
 
                 {/* Eingabefelder für eine neue Übung */}
-                <Input 
-                  list="exercise-list"
-                  placeholder="Übung eingeben oder wählen..." 
-                  value={exName} 
-                  onChange={(e) => setExName(e.target.value)} 
-                />
+                <div className="flex gap-2">
+                  <Select value={exMuscleFilter} onValueChange={setExMuscleFilter}>
+                    <SelectTrigger className="w-[140px]">
+                      <span className="truncate">{exMuscleFilter === 'all' ? 'Alle Muskeln' : exMuscleFilter}</span>
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Alle Muskeln</SelectItem>
+                      {uniqueMuscleGroups.map(group => (
+                        <SelectItem key={group} value={group}>{group}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  
+                  <Input 
+                    className="flex-1"
+                    list="exercise-list"
+                    placeholder="Übung eingeben/wählen..." 
+                    value={exName} 
+                    onChange={(e) => setExName(e.target.value)} 
+                  />
+                </div>
                 {/* Datalist ermöglicht das Dropdown mit Vorschlägen aus unserer JSON */}
                 <datalist id="exercise-list">
-                  {availableExercises.map(ex => (
+                  {filteredExercises.map(ex => (
                     <option key={ex.id || ex.name} value={ex.name} />
                   ))}
                 </datalist>
