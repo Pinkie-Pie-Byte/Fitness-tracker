@@ -311,7 +311,7 @@ export default function App() {
 
                 {/* Eingabefelder für eine neue Übung */}
                 <div className="flex gap-2">
-                  <Select value={exMuscleFilter} onValueChange={setExMuscleFilter}>
+                  <Select value={exMuscleFilter} onValueChange={(val) => setExMuscleFilter(val || 'all')}>
                     <SelectTrigger className="w-[140px]">
                       <span className="truncate">{exMuscleFilter === 'all' ? 'Alle Muskeln' : exMuscleFilter}</span>
                     </SelectTrigger>
