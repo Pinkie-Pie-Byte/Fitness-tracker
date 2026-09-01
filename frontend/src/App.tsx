@@ -488,7 +488,9 @@ export default function App() {
                     <Label>RPE</Label>
                     <Input type="number" min="1" max="10" value={ex.difficulty} onChange={e => {
                       const newData = [...executionData];
-                      newData[i].difficulty = Number(e.target.value);
+                      let val = Number(e.target.value);
+                      if (val > 10) val = 10;
+                      newData[i].difficulty = val;
                       setExecutionData(newData);
                     }} />
                   </div>
