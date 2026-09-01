@@ -169,6 +169,9 @@ async function startServer() {
         if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
           return res.status(400).json({ error: 'Werte für Sätze, Wiederholungen und Gewicht dürfen nicht negativ sein.' });
         }
+        if (ex.difficulty < 1 || ex.difficulty > 10) {
+          return res.status(400).json({ error: 'RPE muss zwischen 1 und 10 liegen.' });
+        }
       }
 
       try {

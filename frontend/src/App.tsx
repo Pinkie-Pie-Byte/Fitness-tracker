@@ -182,6 +182,9 @@ export default function App() {
       if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
         return alert('Fehler: Bitte gib keine negativen Zahlen für Sätze, Wiederholungen oder Gewicht ein.');
       }
+      if (ex.difficulty < 1 || ex.difficulty > 10) {
+        return alert('Fehler: RPE (Anstrengung) muss zwischen 1 und 10 liegen.');
+      }
     }
 
     const logData = {
@@ -483,7 +486,7 @@ export default function App() {
                   </div>
                   <div>
                     <Label>RPE</Label>
-                    <Input type="number" value={ex.difficulty} onChange={e => {
+                    <Input type="number" min="1" max="10" value={ex.difficulty} onChange={e => {
                       const newData = [...executionData];
                       newData[i].difficulty = Number(e.target.value);
                       setExecutionData(newData);
