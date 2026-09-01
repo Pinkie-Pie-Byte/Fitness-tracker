@@ -1,116 +1,100 @@
-require('dotenv').config(); // Lädt geheime Umgebungsvariablen (wie MONGO_URI)
-const express = require('express'); // Express ist das Framework für unseren Server
-const mongoose = require('mongoose'); // Mongoose hilft uns, mit der MongoDB-Datenbank zu sprechen
-const cors = require('cors'); // CORS erlaubt es dem Frontend, mit dem Backend zu kommunizieren
-const fs = require('fs'); // Erlaubt das Lesen von Dateien auf dem Server
-const { betterAuth } = require('better-auth'); // Authentifizierungs-Bibliothek für den Login
-const { mongodbAdapter } = require('@better-auth/mongo-adapter'); // Verbindet das Login-System mit MongoDB
-const { toNodeHandler } = require('better-auth/node'); // Übersetzt den Login für unseren Express-Server
-
-const app = express(); // Hier erstellen wir die eigentliche Server-App
-app.use(express.json()); // Erlaubt dem Server, JSON-Daten zu verstehen (z.B. vom Frontend)
-// Erlaubt Anfragen von überall und lässt das Senden von Cookies zu (wichtig für den Login)
+require('dotenv').config(); 
+const express = require('express'); 
+const mongoose = require('mongoose'); 
+const cors = require('cors'); 
+const fs = require('fs'); 
+const { betterAuth } = require('better-auth'); 
+const { mongodbAdapter } = require('@better-auth/mongo-adapter'); 
+const { toNodeHandler } = require('better-auth/node'); 
+const app = express(); 
+app.use(express.json()); 
 app.use(cors({ origin: true, credentials: true })); 
-
 // --- DATENMODELL (MongoDB Schema) ---
-// Hier definieren wir, wie ein "Workout" (Trainingsplan) in der Datenbank aussehen soll
+// TODO(gabriel): Refactor models into separate files once the schema grows
 const workoutSchema = new mongoose.Schema({
-  userId: { type: String, required: true }, // Gehört zu einem bestimmten Nutzer
-  title: String, // Name des Plans (z.B. "Push Day")
-  notes: String, // Notizen
-  createdAt: { type: Date, default: Date.now }, // Wann wurde der Plan erstellt?
-  exercises: [{ // Eine Liste von Übungen
+  userId: { type: String, required: true }, 
+  title: String, 
+  notes: String, 
+  createdAt: { type: Date, default: Date.now }, 
+  exercises: [{ 
     name: String,
-    sets: Number, // Sätze
-    reps: Number, // Wiederholungen
-    weight: Number, // Gewicht in kg
+    sets: Number, 
+    reps: Number, 
+    weight: Number, 
     bodyPart: String,
     target: String,
     secondaryMuscles: [String],
-    imageUrl: String // Optionales Bild für die Ausführung
+    imageUrl: String 
   }]
 });
-const Workout = mongoose.model('Workout', workoutSchema); // Erstellt die Tabelle 'workouts'
-
-// Hier definieren wir, wie ein absolviertes Training in der Datenbank gespeichert wird
+const Workout = mongoose.model('Workout', workoutSchema); 
 const workoutLogSchema = new mongoose.Schema({
   userId: { type: String, required: true },
-  workoutId: String, // Welcher Trainingsplan wurde benutzt?
+  workoutId: String, 
   workoutTitle: String,
-  date: { type: Date, default: Date.now }, // Wann wurde trainiert?
+  date: { type: Date, default: Date.now }, 
   exercises: [{
     name: String,
     actualSets: Number,
     actualReps: Number,
     actualWeight: Number,
-    difficulty: Number, // Wie anstrengend war es? (RPE)
+    difficulty: Number, 
     imageUrl: String
   }]
 });
-const WorkoutLog = mongoose.model('WorkoutLog', workoutLogSchema); // Erstellt die Tabelle 'workoutlogs'
-
-// Wir starten den Server asynchron (async), damit wir warten können, bis die DB verbunden ist
+const WorkoutLog = mongoose.model('WorkoutLog', workoutLogSchema); 
 async function startServer() {
   try {
-    // 1. Verbindung zur Datenbank herstellen
+    
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Datenbank verbunden!');
-
     const db = mongoose.connection.getClient().db();
-
-    // 2. Login-System konfigurieren
+    
     const auth = betterAuth({
-      database: mongodbAdapter(db), // Speichert Nutzer in unserer MongoDB
+      database: mongodbAdapter(db), 
       emailAndPassword: {
-        enabled: true, // Erlaubt Login mit E-Mail und Passwort
+        enabled: true, 
       },
       baseURL: process.env.FRONTEND_URL || "http://localhost:5000",
       advanced: {
         defaultCookieAttributes: {
-          sameSite: "none", // Erlaubt Cross-Domain Cookies (Vercel -> Render)
-          secure: true // Nutzt sichere HTTPS-Verbindung für Cookies
+          sameSite: "none", 
+          secure: true 
         }
       },
       trustedOrigins: ["http://localhost:5173", process.env.FRONTEND_URL].filter(Boolean)
     });
-
-    // 3. Login-Schnittstelle aktivieren (nimmt alle Anfragen an /api/auth entgegen)
+    
     app.use('/api/auth', toNodeHandler(auth));
-
-    // 4. Sicherheits-Türsteher (Middleware) für unsere Daten
-    // Prüft, ob ein Nutzer eingeloggt ist, bevor er auf seine Daten zugreifen darf
+    
+    
     const requireAuth = async (req, res, next) => {
       const session = await auth.api.getSession({ headers: req.headers });
       if (!session || !session.user) {
-        return res.status(401).json({ error: 'Nicht eingeloggt' }); // Fehler, wenn nicht eingeloggt
+        return res.status(401).json({ error: 'Nicht eingeloggt' }); 
       }
-      req.user = session.user; // Speichert den Nutzer für die spätere Verwendung
-      next(); // Lässt den Nutzer passieren
+      req.user = session.user; 
+      next(); 
     };
-
-    // --- API ROUTEN ---
-
-    // Holt die Liste der verfügbaren Übungen aus der lokalen JSON-Datei (muss nicht geschützt werden)
+    
+    
     app.get('/api/exercises', (req, res) => {
       fs.readFile(__dirname + '/bodybuilding_top_200.json', 'utf8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Fehler beim Lesen' });
         res.json(JSON.parse(data));
       });
     });
-
-    // Ab hier setzen wir unseren "Türsteher" vor die Routen (nur für eingeloggte User)
+    
     app.use('/api/workouts', requireAuth);
     app.use('/api/logs', requireAuth);
-
-    // ROUTE: Holt alle Trainingspläne des aktuellen Nutzers aus der Datenbank
+    
     app.get('/api/workouts', async (req, res) => {
       const workouts = await Workout.find({ userId: req.user.id }).sort({ createdAt: -1 });
       res.json(workouts);
     });
-
-    // ROUTE: Speichert einen neuen Trainingsplan in der Datenbank (Create)
+    
     app.post('/api/workouts', async (req, res) => {
-      // Serverseitige Validierung der Eingaben
+      
       const { title, exercises } = req.body;
       if (!title || typeof title !== 'string' || title.trim() === '') {
         return res.status(400).json({ error: 'Titel ist ein Pflichtfeld und darf nicht leer sein.' });
@@ -118,13 +102,12 @@ async function startServer() {
       if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
         return res.status(400).json({ error: 'Ein Trainingsplan muss mindestens eine Übung enthalten.' });
       }
-      // Validierung für jede Übung im Plan
+      
       for (const ex of exercises) {
         if (!ex.name || typeof ex.name !== 'string') return res.status(400).json({ error: 'Jede Übung benötigt einen gültigen Namen.' });
         if (ex.sets <= 0 || ex.reps <= 0) return res.status(400).json({ error: 'Sätze und Wiederholungen müssen positive Zahlen sein.' });
         if (ex.weight < 0) return res.status(400).json({ error: 'Das Gewicht darf nicht negativ sein.' });
       }
-
       try {
         const workout = await Workout.create({ ...req.body, userId: req.user.id });
         res.json(workout);
@@ -132,33 +115,29 @@ async function startServer() {
         res.status(500).json({ error: 'Interner Serverfehler beim Speichern.' });
       }
     });
-
-    // ROUTE: Aktualisiert einen bestehenden Trainingsplan (Update - wichtig für CRUD!)
+    
     app.put('/api/workouts/:id', async (req, res) => {
       const updatedWorkout = await Workout.findOneAndUpdate(
         { _id: req.params.id, userId: req.user.id },
         req.body,
-        { new: true } // Gibt das aktualisierte Objekt zurück
+        { new: true } 
       );
       res.json(updatedWorkout);
     });
-
-    // ROUTE: Löscht einen Trainingsplan und die dazugehörigen Trainings-Logs (Delete)
+    
     app.delete('/api/workouts/:id', async (req, res) => {
       await Workout.findOneAndDelete({ _id: req.params.id, userId: req.user.id });
       await WorkoutLog.deleteMany({ workoutId: req.params.id, userId: req.user.id });
       res.json({ message: 'Erfolgreich gelöscht' });
     });
-
-    // ROUTE: Holt alle absolvierten Trainings-Logs des Nutzers
+    
     app.get('/api/logs', async (req, res) => {
       const logs = await WorkoutLog.find({ userId: req.user.id }).sort({ date: 1 });
       res.json(logs);
     });
-
-    // ROUTE: Speichert ein neu absolviertes Training
+    
     app.post('/api/logs', async (req, res) => {
-      // Serverseitige Validierung der Logs
+      
       const { workoutId, exercises } = req.body;
       if (!workoutId) return res.status(400).json({ error: 'Workout-ID fehlt.' });
       if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
@@ -173,7 +152,6 @@ async function startServer() {
           return res.status(400).json({ error: 'RPE muss zwischen 1 und 10 liegen.' });
         }
       }
-
       try {
         const log = await WorkoutLog.create({ ...req.body, userId: req.user.id });
         res.json(log);
@@ -181,16 +159,12 @@ async function startServer() {
         res.status(500).json({ error: 'Interner Serverfehler beim Speichern des Logs.' });
       }
     });
-
-    // 5. Server hochfahren
+    
     app.listen(process.env.PORT || 5000, () => {
       console.log('Server läuft auf Port ' + (process.env.PORT || 5000));
     });
-
   } catch (err) {
-    console.error('Startfehler:', err); // Falls etwas schiefgeht (z.B. keine DB-Verbindung)
+    console.error('Startfehler:', err); 
   }
 }
-
-// Führt die Start-Funktion aus
 startServer();

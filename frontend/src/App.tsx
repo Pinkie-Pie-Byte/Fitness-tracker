@@ -11,54 +11,51 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import Auth from '@/components/Auth';
 import { authClient } from '@/lib/auth';
 
-// Durch unseren Reverse-Proxy in Vercel können wir einfach den relativen Pfad nutzen
+
 const API_URL = ''; 
 
 export default function App() {
-  // --- AUTHENTIFIZIERUNG ---
-  // Prüft, ob der Nutzer gerade eingeloggt ist
+  
   const { data: session, isPending } = authClient.useSession();
 
   // --- DATEN-STATE (Zustand der App) ---
-  const [workouts, setWorkouts] = useState<any[]>([]); // Liste aller gespeicherten Trainingspläne
-  const [logs, setLogs] = useState<any[]>([]); // Liste aller durchgeführten Trainings (fürs Diagramm)
-  const [availableExercises, setAvailableExercises] = useState<any[]>([]); // Die 200 Bodybuilding-Übungen aus der JSON
+  const [workouts, setWorkouts] = useState<any[]>([]); 
+  const [logs, setLogs] = useState<any[]>([]); 
+  const [availableExercises, setAvailableExercises] = useState<any[]>([]); 
   
   // --- FORMULAR-STATE (Für neue Workouts) ---
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState('');
-  const [pendingExercises, setPendingExercises] = useState<any[]>([]); // Übungen, die gerade in den neuen Plan eingefügt werden
-  const [exName, setExName] = useState('');
-  const [exSets, setExSets] = useState('');
-  const [exReps, setExReps] = useState('');
-  const [exWeight, setExWeight] = useState('');
+  const [draftExercises, setDraftExercises] = useState<any[]>([]); 
+  const [formExName, setFormExName] = useState('');
+  const [formExSets, setFormExSets] = useState('');
+  const [formExReps, setFormExReps] = useState('');
+  const [formExWeight, setFormExWeight] = useState('');
   const [exImageUrl, setExImageUrl] = useState('');
   const [exMuscleFilter, setExMuscleFilter] = useState('all');
 
-  // Holt alle einzigartigen Muskelgruppen aus den geladenen Übungen
+  
   const uniqueMuscleGroups = useMemo(() => {
     const groups = new Set<string>();
     availableExercises.forEach(ex => {
       if (ex.bodyPart) groups.add(ex.bodyPart);
-      // Alternativ: if (ex.target) groups.add(ex.target); 
+      
     });
     return Array.from(groups).sort();
   }, [availableExercises]);
 
-  // Gefilterte Liste der Übungen für das Dropdown
+  
   const filteredExercises = useMemo(() => {
     if (exMuscleFilter === 'all') return availableExercises;
     return availableExercises.filter(ex => ex.bodyPart === exMuscleFilter);
   }, [availableExercises, exMuscleFilter]);
 
   // --- AUSFÜHRUNGS-MODAL (Wenn man auf "Starten" klickt) ---
-  const [executionWorkout, setExecutionWorkout] = useState<any>(null); // Welches Workout wird gerade gemacht?
-  const [executionData, setExecutionData] = useState<any[]>([]); // Die eingetragenen Gewichte während dem Training
-
-  // --- DIAGRAMM-STATE ---
-  const [chartFilter, setChartFilter] = useState('all'); // Filtert das Diagramm (entweder alle, oder eine bestimmte Übung)
-  const [showAgb, setShowAgb] = useState(false); // Zeigt das Borat AGB Modal
-  // Lade alle Daten vom Server, sobald der Nutzer eingeloggt ist (session existiert)
+  const [executionWorkout, setExecutionWorkout] = useState<any>(null); 
+  const [executionData, setExecutionData] = useState<any[]>([]); 
+  const [chartFilter, setChartFilter] = useState('all'); 
+  const [showAgb, setShowAgb] = useState(false); 
+  
   useEffect(() => {
     if (session) {
       fetchWorkouts();
@@ -69,16 +66,16 @@ export default function App() {
 
   // --- SERVER-ANFRAGEN (API CALLS) ---
 
-  // Holt alle Trainingspläne aus der Datenbank
+  
   const fetchWorkouts = async () => {
     const res = await fetch(`${API_URL}/api/workouts`, { credentials: 'include' });
     if(res.ok) {
       const data = await res.json();
-      setWorkouts(data); // Speichert die Daten im React-State
+      setWorkouts(data); 
     }
   };
 
-  // Holt die 200 Basis-Übungen
+  
   const fetchExercises = async () => {
     const res = await fetch(`${API_URL}/api/exercises`, { credentials: 'include' });
     if(res.ok) {
@@ -87,7 +84,7 @@ export default function App() {
     }
   };
 
-  // Holt die Trainings-Historie
+  
   const fetchLogs = async () => {
     const res = await fetch(`${API_URL}/api/logs`, { credentials: 'include' });
     if(res.ok) {
@@ -96,71 +93,70 @@ export default function App() {
     }
   };
 
-  // --- LOGIK-FUNKTIONEN ---
-
-  // Fügt dem aktuell erstellten Trainingsplan eine neue Übung hinzu (noch nicht in der DB gespeichert)
+  
   const handleAddExercise = () => {
-    // Clientseitige Validierung der Formular-Eingaben
-    if (!exName || !exSets || !exReps) {
+    
+    if (!formExName || !formExSets || !formExReps) {
       return alert('Bitte fülle Übungsname, Sätze und Wiederholungen aus.');
     }
-    if (Number(exSets) <= 0 || Number(exReps) <= 0) {
+    if (Number(formExSets) <= 0 || Number(formExReps) <= 0) {
       return alert('Sätze und Wiederholungen müssen positiv sein.');
     }
-    if (Number(exWeight) < 0) {
+    if (Number(formExWeight) < 0) {
       return alert('Gewicht darf nicht negativ sein.');
     }
     
-    // Sucht die Übung in der JSON-Liste, um zusätzliche Infos (wie Zielmuskel) zu bekommen
-    const exObj = availableExercises.find((e: any) => e.name === exName);
     
-    setPendingExercises([...pendingExercises, {
-      name: exName,
-      sets: Number(exSets),
-      reps: Number(exReps),
-      weight: Number(exWeight) || 0,
+    const exObj = availableExercises.find((e: any) => e.name === formExName);
+    
+    setDraftExercises([...draftExercises, {
+      name: formExName,
+      sets: Number(formExSets),
+      reps: Number(formExReps),
+      weight: Number(formExWeight) || 0,
       bodyPart: exObj?.bodyPart || '',
       target: exObj?.target || '',
       imageUrl: exImageUrl
     }]);
     
-    // Felder nach dem Hinzufügen wieder leeren
-    setExName(''); setExSets(''); setExReps(''); setExWeight(''); setExImageUrl('');
+    
+    setFormExName(''); setFormExSets(''); setFormExReps(''); setFormExWeight(''); setExImageUrl('');
   };
 
-  // Speichert den komplett fertigen Trainingsplan in der Datenbank
+  
   const handleSaveWorkout = async () => {
-    // Clientseitige Validierung vor dem Speichern
+    // TODO(gabriel): Refactor form validation to use a proper library like Zod later
+    
     if (!title || title.trim() === '') {
       return alert('Fehler: Bitte gib einen Titel für das Workout ein.');
     }
-    if (pendingExercises.length === 0) {
+    if (draftExercises.length === 0) {
       return alert('Fehler: Bitte füge mindestens eine Übung zum Workout hinzu.');
     }
     
-    const newWorkout = { title, notes, exercises: pendingExercises };
+    const newWorkout = { title, notes, exercises: draftExercises };
     
     await fetch(`${API_URL}/api/workouts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newWorkout), // Schickt die Daten als JSON-Text an den Server
+      body: JSON.stringify(newWorkout), 
       credentials: 'include'
     });
     
-    // Formular aufräumen und die Liste neu vom Server laden
-    setTitle(''); setNotes(''); setPendingExercises([]);
+    
+    setTitle(''); setNotes(''); setDraftExercises([]);
     fetchWorkouts();
   };
 
-  // Löscht einen Trainingsplan
+  
   const handleDeleteWorkout = async (id: string) => {
-    if (!confirm('Wirklich löschen?')) return; // Sicherheits-Abfrage
+    if (!confirm('Wirklich löschen?')) return; 
     await fetch(`${API_URL}/api/workouts/${id}`, { method: 'DELETE', credentials: 'include' });
     fetchWorkouts();
     fetchLogs();
   };
 
-  // Öffnet das "Training Starten" Fenster und bereitet die Eingabefelder vor
+  
   const openExecution = (w: any) => {
     setExecutionWorkout(w);
     setExecutionData(w.exercises.map((ex: any) => ({
@@ -168,16 +164,16 @@ export default function App() {
       actualSets: ex.sets,
       actualReps: ex.reps,
       actualWeight: ex.weight,
-      difficulty: 7, // Standard-Anstrengung (RPE)
+      difficulty: 7, 
       imageUrl: ex.imageUrl
     })));
   };
 
-  // Speichert das abgeschlossene Training in der Datenbank (für das Diagramm)
+  
   const submitExecution = async () => {
     if(!executionWorkout) return;
     
-    // Clientseitige Validierung der Log-Eingaben
+    
     for (const ex of executionData) {
       if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
         return alert('Fehler: Bitte gib keine negativen Zahlen für Sätze, Wiederholungen oder Gewicht ein.');
@@ -198,13 +194,13 @@ export default function App() {
       body: JSON.stringify(logData),
       credentials: 'include'
     });
-    setExecutionWorkout(null); // Schließt das Fenster
-    fetchLogs(); // Aktualisiert das Diagramm
+    setExecutionWorkout(null); 
+    fetchLogs(); 
   };
 
   // --- DIAGRAMM BERECHNUNGEN (useMemo sorgt dafür, dass nur bei Bedarf neu gerechnet wird) ---
   
-  // Sammelt alle einzigartigen Übungen aus der Historie für das Dropdown-Menü
+  
   const uniqueOptions = useMemo(() => {
     const map = new Map();
     logs.forEach(log => {
@@ -216,21 +212,21 @@ export default function App() {
     return Array.from(map.entries()).sort((a, b) => a[1].localeCompare(b[1]));
   }, [logs]);
 
-  // Berechnet die Daten für den Liniengraph (entweder Gesamtarbeit oder spezifisches Gewicht)
+  
   const chartData = useMemo(() => {
     const data: any[] = [];
     logs.forEach(log => {
-      const date = new Date(log.date).toLocaleDateString('de-DE'); // Datum für die X-Achse
+      const date = new Date(log.date).toLocaleDateString('de-DE'); 
       
       if (chartFilter === 'all') {
-        // Gesamtvolumen = Sätze * Wiederholungen * Gewicht
+        
         const totalVolume = log.exercises.reduce((sum: number, ex: any) => sum + (ex.actualSets * ex.actualReps * ex.actualWeight), 0);
         data.push({ date, value: totalVolume });
       } else {
-        // Filter nach einer spezifischen Übung
-        const [wId, exName] = chartFilter.split('|');
+        
+        const [wId, formExName] = chartFilter.split('|');
         if (log.workoutId === wId) {
-          const ex = log.exercises.find((e: any) => e.name === exName);
+          const ex = log.exercises.find((e: any) => e.name === formExName);
           if (ex) data.push({ date, value: ex.actualWeight });
         }
       }
@@ -240,24 +236,24 @@ export default function App() {
 
   // --- RENDER-LOGIK (Was sieht der Nutzer auf dem Bildschirm?) ---
 
-  // Zeige Ladebildschirm, während geprüft wird ob Nutzer eingeloggt ist
+  
   if (isPending) {
     return <div className="p-8 text-center mt-20">Laden...</div>;
   }
 
-  // Zeige den Login-Screen (Auth-Komponente), wenn kein Nutzer gefunden wurde
+  
   if (!session) {
     return <Auth onLogin={() => window.location.reload()} />;
   }
 
-  // Das Haupt-Dashboard für eingeloggte Nutzer
+  
   return (
     <div className="container mx-auto p-4 md:p-8 space-y-8">
-      {/* KOPFZEILE (Header) */}
+      
       <header className="flex justify-between items-center pb-4 border-b">
         <div className="flex items-center gap-3">
           <div className="bg-primary p-2 rounded-lg text-primary-foreground">
-            {/* Hantel SVG Icon */}
+            
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v16"/><path d="M18 4v16"/><path d="M4 8h16"/><path d="M4 16h16"/><path d="M2 12h20"/></svg>
           </div>
           <h1 className="text-3xl font-sans font-black tracking-tighter uppercase italic">
@@ -270,17 +266,17 @@ export default function App() {
         }}>Abmelden</Button>
       </header>
 
-      {/* HAUPT-INHALTSBEREICH (Grid-Layout: Links Formular, Rechts Liste & Chart) */}
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* LINKE SPALTE: FORMULAR ZUM ERSTELLEN VON WORKOUTS */}
+        
         <div className="space-y-6">
           <Card>
             <CardHeader>
               <CardTitle>Neues Workout</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Titel & Notizen Inputs */}
+              
               <div className="space-y-2">
                 <Label>Titel</Label>
                 <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="z.B. Push Day" />
@@ -290,14 +286,14 @@ export default function App() {
                 <Input value={notes} onChange={e => setNotes(e.target.value)} placeholder="Wie hast du dich gefühlt?" />
               </div>
 
-              {/* Übungs-Hinzufügen-Box */}
+              
               <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg space-y-4">
                 <h4 className="font-medium text-sm">Übungen hinzufügen</h4>
                 
-                {/* Liste der bereits hinzugefügten, aber noch nicht gespeicherten Übungen */}
-                {pendingExercises.length > 0 && (
+                
+                {draftExercises.length > 0 && (
                   <ul className="space-y-2 mb-4">
-                    {pendingExercises.map((ex, i) => (
+                    {draftExercises.map((ex, i) => (
                       <li key={i} className="text-xs bg-background p-2 rounded border flex justify-between items-center">
                         <div className="flex items-center gap-2">
                           {ex.imageUrl && <img src={ex.imageUrl} className="w-8 h-8 object-cover rounded" alt="thumb" />}
@@ -309,7 +305,7 @@ export default function App() {
                   </ul>
                 )}
 
-                {/* Eingabefelder für eine neue Übung */}
+                
                 <div className="flex gap-2">
                   <Select value={exMuscleFilter} onValueChange={(val) => setExMuscleFilter(val || 'all')}>
                     <SelectTrigger className="w-[140px]">
@@ -327,20 +323,20 @@ export default function App() {
                     className="flex-1"
                     list="exercise-list"
                     placeholder="Übung eingeben/wählen..." 
-                    value={exName} 
-                    onChange={(e) => setExName(e.target.value)} 
+                    value={formExName} 
+                    onChange={(e) => setFormExName(e.target.value)} 
                   />
                 </div>
-                {/* Datalist ermöglicht das Dropdown mit Vorschlägen aus unserer JSON */}
+                
                 <datalist id="exercise-list">
                   {filteredExercises.map(ex => (
                     <option key={ex.id || ex.name} value={ex.name} />
                   ))}
                 </datalist>
                 <div className="grid grid-cols-3 gap-2">
-                  <Input placeholder="Sätze" type="number" value={exSets} onChange={e => setExSets(e.target.value)} />
-                  <Input placeholder="Wdh." type="number" value={exReps} onChange={e => setExReps(e.target.value)} />
-                  <Input placeholder="kg" type="number" value={exWeight} onChange={e => setExWeight(e.target.value)} />
+                  <Input placeholder="Sätze" type="number" value={formExSets} onChange={e => setFormExSets(e.target.value)} />
+                  <Input placeholder="Wdh." type="number" value={formExReps} onChange={e => setFormExReps(e.target.value)} />
+                  <Input placeholder="kg" type="number" value={formExWeight} onChange={e => setFormExWeight(e.target.value)} />
                 </div>
                 <Input placeholder="Bild-URL (Optional)" type="url" value={exImageUrl} onChange={e => setExImageUrl(e.target.value)} />
                 
@@ -353,10 +349,10 @@ export default function App() {
           </Card>
         </div>
 
-        {/* RECHTE SPALTE: LISTE ALLER WORKOUTS & DIAGRAMM */}
+        
         <div className="md:col-span-2 space-y-8">
           
-          {/* WORKOUT LISTE */}
+          
           <div>
             <h2 className="text-2xl font-bold mb-4">Deine Trainings</h2>
             {workouts.length === 0 ? (
@@ -405,12 +401,12 @@ export default function App() {
             )}
           </div>
 
-          {/* FORTSCHRITTS-DIAGRAMM */}
+          
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">Fortschritt (Gewicht)</h2>
               
-              {/* Filter-Dropdown für das Diagramm */}
+              
               <Select value={chartFilter} onValueChange={(v) => setChartFilter(v || 'all')}>
                 <SelectTrigger className="w-[300px] overflow-hidden">
                   <span className="truncate flex-1 text-left">
@@ -427,7 +423,7 @@ export default function App() {
             </div>
             
             <Card className="p-4 h-[400px]">
-              {/* Recharts Liniengraph */}
+              
               <ChartContainer config={{ value: { label: "Wert", color: "hsl(142.1 76.2% 36.3%)" } }} className="h-full w-full">
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -442,7 +438,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* TRAINING STARTEN - POPUP (MODAL) */}
+      
       <Dialog open={!!executionWorkout} onOpenChange={(open) => !open && setExecutionWorkout(null)}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
@@ -458,7 +454,7 @@ export default function App() {
                   )}
                   <h4 className="font-medium">{ex.name}</h4>
                 </div>
-                {/* Felder zum Eintragen des aktuellen Trainings */}
+                
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   <div>
                     <Label>Sätze</Label>
@@ -505,14 +501,14 @@ export default function App() {
         </DialogContent>
       </Dialog>
 
-      {/* FOOTER MIT AGB UND BILD */}
+      
       <footer className="mt-12 pt-8 pb-12 border-t text-center text-muted-foreground flex flex-col items-center justify-center">
         <p className="text-sm font-medium cursor-pointer hover:underline hover:text-primary transition-colors" onClick={() => setShowAgb(true)}>
           AGB - Allgemeine Geschäftsbedingungen
         </p>
       </footer>
 
-      {/* AGB MODAL (BORAT) */}
+      
       <Dialog open={showAgb} onOpenChange={setShowAgb}>
         <DialogContent className="max-w-4xl border-none bg-transparent shadow-none p-0 flex justify-center">
           <img src="/agb-borat.png" alt="AGB" className="max-h-[85vh] object-contain rounded-2xl shadow-2xl" />
