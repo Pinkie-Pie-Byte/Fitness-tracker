@@ -504,6 +504,12 @@ export default function App() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* FOOTER MIT AGB UND BILD */}
+      <footer className="mt-12 pt-8 pb-12 border-t text-center text-muted-foreground flex flex-col items-center justify-center">
+        <p className="mb-4 text-sm font-medium">AGB - Allgemeine Geschäftsbedingungen</p>
+        <img src="/agb-borat.png" alt="AGB" className="w-64 rounded-lg shadow-lg" />
+      </footer>
     </div>
   );
 }
