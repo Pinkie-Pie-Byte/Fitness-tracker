@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
-import { IconX } from '@tabler/icons-react';
+import { IconX, IconChevronDown } from '@tabler/icons-react';
 import type { AvailableExercise, Workout, WorkoutExercise, NewExerciseDraft } from '@/types/workout';
 
 interface WorkoutFormProps {
@@ -154,7 +154,7 @@ export default function WorkoutForm({
           />
         </div>
 
-        <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg space-y-4">
+        <div className="bg-slate-900/60 p-4 rounded-lg space-y-4 border border-border">
           <h4 className="font-medium text-sm">Übungen hinzufügen</h4>
 
           {draftExercises.length > 0 && (
@@ -208,7 +208,7 @@ export default function WorkoutForm({
             <div className="relative flex-1">
               <Input
                 ref={exerciseInputRef}
-                className={`w-full ${newExercise.name ? 'pr-9' : ''}`}
+                className="w-full pr-16 [&::-webkit-calendar-picker-indicator]:hidden"
                 list="exercise-list"
                 placeholder="Übung eingeben/wählen..."
                 value={newExercise.name}
@@ -221,17 +221,33 @@ export default function WorkoutForm({
                 }}
                 onChange={(e) => setNewExercise({ ...newExercise, name: e.target.value })}
               />
-              {newExercise.name && (
+              <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1 text-muted-foreground">
+                {newExercise.name && (
+                  <button
+                    type="button"
+                    onClick={handleClearExerciseSelection}
+                    className="hover:text-foreground p-1 rounded-sm transition-colors"
+                    title="Übungsauswahl löschen (Esc)"
+                    aria-label="Übungsauswahl löschen"
+                  >
+                    <IconX className="size-3.5" />
+                  </button>
+                )}
                 <button
                   type="button"
-                  onClick={handleClearExerciseSelection}
-                  className="absolute right-7 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-0.5 rounded transition-colors"
-                  title="Übungsauswahl löschen (Esc)"
-                  aria-label="Übungsauswahl löschen"
+                  onClick={() => {
+                    exerciseInputRef.current?.focus();
+                    try {
+                      exerciseInputRef.current?.showPicker();
+                    } catch {}
+                  }}
+                  className="hover:text-foreground p-1 rounded-sm transition-colors"
+                  tabIndex={-1}
+                  title="Übersicht öffnen"
                 >
-                  <IconX className="size-3.5" />
+                  <IconChevronDown className="size-4" />
                 </button>
-              )}
+              </div>
             </div>
           </div>
 
