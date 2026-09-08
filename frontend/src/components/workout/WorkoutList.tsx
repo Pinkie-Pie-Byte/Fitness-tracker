@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import ExerciseImage from '@/components/workout/ExerciseImage';
 import type { Workout } from '@/types/workout';
 
 interface WorkoutListProps {
@@ -55,10 +56,10 @@ export default function WorkoutList({ workouts, onStart, onEdit, onDelete }: Wor
                       <TableRow key={i}>
                         <TableCell className="font-medium flex items-center gap-2">
                           {ex.imageUrl && (
-                            <img
+                            <ExerciseImage
                               src={ex.imageUrl}
+                              alt={ex.name}
                               className="w-8 h-8 object-cover rounded"
-                              alt="thumb"
                             />
                           )}
                           {ex.name}

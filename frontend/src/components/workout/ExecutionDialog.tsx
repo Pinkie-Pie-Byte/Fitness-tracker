@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import ExerciseImage from '@/components/workout/ExerciseImage';
 import type { ExecutionExercise, Workout } from '@/types/workout';
 
 interface ExecutionDialogProps {
@@ -71,7 +72,7 @@ export default function ExecutionDialog({ workout, onClose, onSubmit }: Executio
             <div key={i} className="p-4 border rounded-lg space-y-4">
               <div className="flex gap-4 items-start">
                 {ex.imageUrl && (
-                  <img
+                  <ExerciseImage
                     src={ex.imageUrl}
                     alt={ex.name}
                     className="w-20 h-20 object-cover rounded-md"

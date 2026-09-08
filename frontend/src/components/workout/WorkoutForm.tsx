@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
 import { IconX, IconChevronDown } from '@tabler/icons-react';
+import ExerciseImage from '@/components/workout/ExerciseImage';
 import type { AvailableExercise, Workout, WorkoutExercise, NewExerciseDraft } from '@/types/workout';
 
 interface WorkoutFormProps {
@@ -166,7 +167,7 @@ export default function WorkoutForm({
                 >
                   <div className="flex items-center gap-2">
                     {ex.imageUrl && (
-                      <img src={ex.imageUrl} className="w-8 h-8 object-cover rounded" alt="thumb" />
+                      <ExerciseImage src={ex.imageUrl} alt={ex.name} className="w-8 h-8 object-cover rounded" />
                     )}
                     <span>{ex.name}</span>
                   </div>
