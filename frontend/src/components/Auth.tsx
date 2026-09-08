@@ -15,29 +15,18 @@ export default function Auth({ onLogin }: { onLogin: () => void }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     try {
-      if (isLogin) {
-        const { error } = await authClient.signIn.email({
-          email,
-          password,
-        });
-        if (error) {
-          alert('Login fehlgeschlagen: ' + error.message);
-        } else {
-          onLogin();
-        }
+      const submit = isLogin
+        ? () => authClient.signIn.email({ email, password })
+        : () => authClient.signUp.email({ email, password, name });
+      const failureMessage = isLogin ? 'Login fehlgeschlagen: ' : 'Registrierung fehlgeschlagen: ';
+
+      const { error } = await submit();
+      if (error) {
+        alert(failureMessage + error.message);
       } else {
-        const { error } = await authClient.signUp.email({
-          email,
-          password,
-          name,
-        });
-        if (error) {
-          alert('Registrierung fehlgeschlagen: ' + error.message);
-        } else {
-          onLogin();
-        }
+        onLogin();
       }
     } catch (err) {
       console.error(err);

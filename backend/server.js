@@ -9,8 +9,8 @@ const { toNodeHandler } = require('better-auth/node');
 const app = express(); 
 app.use(express.json()); 
 app.use(cors({ origin: true, credentials: true })); 
+
 // --- DATENMODELL (MongoDB Schema) ---
-// TODO(gabriel): Refactor models into separate files once the schema grows
 const workoutSchema = new mongoose.Schema({
   userId: { type: String, required: true }, 
   title: String, 
@@ -23,7 +23,6 @@ const workoutSchema = new mongoose.Schema({
     weight: Number, 
     bodyPart: String,
     target: String,
-    secondaryMuscles: [String],
     imageUrl: String 
   }]
 });
@@ -43,9 +42,16 @@ const workoutLogSchema = new mongoose.Schema({
   }]
 });
 const WorkoutLog = mongoose.model('WorkoutLog', workoutLogSchema); 
+
+// Übungsliste wird einmal beim Serverstart eingelesen (statt bei jedem Request)
+const exerciseList = JSON.parse(fs.readFileSync(__dirname + '/bodybuilding_top_200.json', 'utf8'));
+
+// Helfer für Zahlen-Validierung
+const isPositive = (value) => typeof value === 'number' && value > 0;
+const isNonNegative = (value) => typeof value === 'number' && value >= 0;
+
 async function startServer() {
   try {
-    
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Datenbank verbunden!');
     const db = mongoose.connection.getClient().db();
@@ -66,8 +72,7 @@ async function startServer() {
     });
     
     app.use('/api/auth', toNodeHandler(auth));
-    
-    
+
     const requireAuth = async (req, res, next) => {
       const session = await auth.api.getSession({ headers: req.headers });
       if (!session || !session.user) {
@@ -76,13 +81,9 @@ async function startServer() {
       req.user = session.user; 
       next(); 
     };
-    
-    
+
     app.get('/api/exercises', (req, res) => {
-      fs.readFile(__dirname + '/bodybuilding_top_200.json', 'utf8', (err, data) => {
-        if (err) return res.status(500).json({ error: 'Fehler beim Lesen' });
-        res.json(JSON.parse(data));
-      });
+      res.json(exerciseList);
     });
     
     app.use('/api/workouts', requireAuth);
@@ -93,21 +94,26 @@ async function startServer() {
       res.json(workouts);
     });
     
-    app.post('/api/workouts', async (req, res) => {
-      
-      const { title, exercises } = req.body;
+    // Gemeinsame Validierung für Erstellen und Bearbeiten von Workouts
+    const validateWorkoutPayload = (title, exercises) => {
       if (!title || typeof title !== 'string' || title.trim() === '') {
-        return res.status(400).json({ error: 'Titel ist ein Pflichtfeld und darf nicht leer sein.' });
+        return 'Titel ist ein Pflichtfeld und darf nicht leer sein.';
       }
       if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
-        return res.status(400).json({ error: 'Ein Trainingsplan muss mindestens eine Übung enthalten.' });
+        return 'Ein Trainingsplan muss mindestens eine Übung enthalten.';
       }
-      
       for (const ex of exercises) {
-        if (!ex.name || typeof ex.name !== 'string') return res.status(400).json({ error: 'Jede Übung benötigt einen gültigen Namen.' });
-        if (ex.sets <= 0 || ex.reps <= 0) return res.status(400).json({ error: 'Sätze und Wiederholungen müssen positive Zahlen sein.' });
-        if (ex.weight < 0) return res.status(400).json({ error: 'Das Gewicht darf nicht negativ sein.' });
+        if (!ex.name || typeof ex.name !== 'string') return 'Jede Übung benötigt einen gültigen Namen.';
+        if (!isPositive(ex.sets) || !isPositive(ex.reps)) return 'Sätze und Wiederholungen müssen positive Zahlen sein.';
+        if (!isNonNegative(ex.weight)) return 'Das Gewicht darf nicht negativ sein.';
       }
+      return null;
+    };
+
+    app.post('/api/workouts', async (req, res) => {
+      const { title, exercises } = req.body;
+      const validationError = validateWorkoutPayload(title, exercises);
+      if (validationError) return res.status(400).json({ error: validationError });
       try {
         const workout = await Workout.create({ ...req.body, userId: req.user.id });
         res.json(workout);
@@ -117,18 +123,32 @@ async function startServer() {
     });
     
     app.put('/api/workouts/:id', async (req, res) => {
-      const updatedWorkout = await Workout.findOneAndUpdate(
-        { _id: req.params.id, userId: req.user.id },
-        req.body,
-        { new: true } 
-      );
-      res.json(updatedWorkout);
+      const { title, notes, exercises } = req.body;
+      const validationError = validateWorkoutPayload(title, exercises);
+      if (validationError) return res.status(400).json({ error: validationError });
+      try {
+        const updatedWorkout = await Workout.findOneAndUpdate(
+          { _id: req.params.id, userId: req.user.id },
+          { title, notes, exercises },
+          { new: true }
+        );
+        if (!updatedWorkout) {
+          return res.status(404).json({ error: 'Workout wurde nicht gefunden.' });
+        }
+        res.json(updatedWorkout);
+      } catch (err) {
+        res.status(500).json({ error: 'Interner Serverfehler beim Aktualisieren.' });
+      }
     });
     
     app.delete('/api/workouts/:id', async (req, res) => {
-      await Workout.findOneAndDelete({ _id: req.params.id, userId: req.user.id });
-      await WorkoutLog.deleteMany({ workoutId: req.params.id, userId: req.user.id });
-      res.json({ message: 'Erfolgreich gelöscht' });
+      try {
+        await Workout.findOneAndDelete({ _id: req.params.id, userId: req.user.id });
+        await WorkoutLog.deleteMany({ workoutId: req.params.id, userId: req.user.id });
+        res.json({ message: 'Erfolgreich gelöscht' });
+      } catch (err) {
+        res.status(500).json({ error: 'Interner Serverfehler beim Löschen.' });
+      }
     });
     
     app.get('/api/logs', async (req, res) => {
@@ -137,15 +157,13 @@ async function startServer() {
     });
     
     app.post('/api/logs', async (req, res) => {
-      
       const { workoutId, exercises } = req.body;
       if (!workoutId) return res.status(400).json({ error: 'Workout-ID fehlt.' });
       if (!exercises || !Array.isArray(exercises) || exercises.length === 0) {
         return res.status(400).json({ error: 'Es muss mindestens eine geloggte Übung übergeben werden.' });
       }
-      
       for (const ex of exercises) {
-        if (ex.actualSets < 0 || ex.actualReps < 0 || ex.actualWeight < 0) {
+        if (!isNonNegative(ex.actualSets) || !isNonNegative(ex.actualReps) || !isNonNegative(ex.actualWeight)) {
           return res.status(400).json({ error: 'Werte für Sätze, Wiederholungen und Gewicht dürfen nicht negativ sein.' });
         }
         if (ex.difficulty < 1 || ex.difficulty > 10) {
