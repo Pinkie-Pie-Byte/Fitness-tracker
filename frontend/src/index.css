@@ -98,4 +98,9 @@
   html {
     @apply font-mono;
   }
+  input::-webkit-calendar-picker-indicator {
+    display: none !important;
+    -webkit-appearance: none !important;
+    opacity: 0 !important;
+  }
 }

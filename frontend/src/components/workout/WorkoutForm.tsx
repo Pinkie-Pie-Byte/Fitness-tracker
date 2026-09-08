@@ -208,7 +208,7 @@ export default function WorkoutForm({
             <div className="relative flex-1">
               <Input
                 ref={exerciseInputRef}
-                className="w-full pr-16 [&::-webkit-calendar-picker-indicator]:hidden"
+                className="w-full pr-16"
                 list="exercise-list"
                 placeholder="Übung eingeben/wählen..."
                 value={newExercise.name}
