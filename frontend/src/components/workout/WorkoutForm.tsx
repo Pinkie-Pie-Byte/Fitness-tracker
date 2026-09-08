@@ -1,9 +1,10 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
+import { IconX } from '@tabler/icons-react';
 import type { AvailableExercise, Workout, WorkoutExercise, NewExerciseDraft } from '@/types/workout';
 
 interface WorkoutFormProps {
@@ -33,6 +34,19 @@ export default function WorkoutForm({
   const [newExercise, setNewExercise] = useState<NewExerciseDraft>(emptyNewExercise);
   const [exMuscleFilter, setExMuscleFilter] = useState('all');
   const [isSaving, setIsSaving] = useState(false);
+  const exerciseInputRef = useRef<HTMLInputElement>(null);
+
+  const handleClearExerciseSelection = () => {
+    setNewExercise((prev) => ({ ...prev, name: '' }));
+    setTimeout(() => {
+      exerciseInputRef.current?.focus();
+      try {
+        exerciseInputRef.current?.showPicker();
+      } catch {
+        // Fallback for browsers without showPicker
+      }
+    }, 0);
+  };
 
   useEffect(() => {
     if (editingWorkout) {
@@ -191,13 +205,34 @@ export default function WorkoutForm({
               </SelectContent>
             </Select>
 
-            <Input
-              className="flex-1"
-              list="exercise-list"
-              placeholder="Übung eingeben/wählen..."
-              value={newExercise.name}
-              onChange={(e) => setNewExercise({ ...newExercise, name: e.target.value })}
-            />
+            <div className="relative flex-1">
+              <Input
+                ref={exerciseInputRef}
+                className={`w-full ${newExercise.name ? 'pr-9' : ''}`}
+                list="exercise-list"
+                placeholder="Übung eingeben/wählen..."
+                value={newExercise.name}
+                onFocus={(e) => e.target.select()}
+                onClick={(e) => (e.target as HTMLInputElement).select()}
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') {
+                    handleClearExerciseSelection();
+                  }
+                }}
+                onChange={(e) => setNewExercise({ ...newExercise, name: e.target.value })}
+              />
+              {newExercise.name && (
+                <button
+                  type="button"
+                  onClick={handleClearExerciseSelection}
+                  className="absolute right-7 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-0.5 rounded transition-colors"
+                  title="Übungsauswahl löschen (Esc)"
+                  aria-label="Übungsauswahl löschen"
+                >
+                  <IconX className="size-3.5" />
+                </button>
+              )}
+            </div>
           </div>
 
           <datalist id="exercise-list">
